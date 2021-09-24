@@ -1,0 +1,205 @@
+Strings and characters:
+
+How to define character?
+
+eg:  char x; which is similar to int y;
+
+If we do int y, then we are declaring a variable which is named y, which can store
+1 number or integer.
+
+If we do char x, then we are declaring a varibale which is named x, which can store
+1 character.
+
+How to initialize a character?
+eg:
+
+int y=5;
+
+In this case, a variable y is declared and 5 is assigned as value.
+
+char x=h; //this is wrong
+
+char x='h';//this is right.
+
+First case is wrong.
+
+In second case, x variable is declared as character data type and stores h alphabet as value.
+
+Format specifier:
+int= %d
+float= %f
+char= %c
+
+program:
+
+WAP to take an alphabet as input and display
+
+#
+#
+void main()
+{
+	char x='y';
+	clrscr();
+	/*printf("Enter an alphabet");
+	scanf("%c",&x);*/
+	printf("\n The character you have entered is %c",x);
+	getch();
+}
+
+
+Strings:
+
+In c programming:
+
+alphabet: character.
+word: string.
+sentence: string.
+
+String in C programming is array of characters.
+
+int a[10];= In this case a is an array, which can hold 10 numbers or integers.
+
+If i have take or deal with only 1 alphabet, how will i define it?
+Ans: char x;
+
+If i have to take or deal with word or sentence(which is multiple alphabet), how will i define it?
+
+Suppose: I have take 5 letter word, how will i define it?
+	char x[5];
+Main point:
+ 10 number: int a[10];
+ 10 alphabet: char a[11];
+
+int a[]={1,2,3,4,5}; //This is correct
+In case of string:
+char x[6]={'H','E','L','L','O',\0}; or    char x[]="HELLO";
+
+Some questions:
+
+
+char x='a';
+
+char x[5]="KIST"; and char x[5]={'K','I','S','T','\0'};
+
+Conclusion:
+
+Character: char x; //declaration
+	   char x='k'; //Initialization
+	   format specifier: %c;
+
+String:
+	char x[10]; //declaration, where x can hold 9 characters.
+	char x[5]="KIST"; 
+	char x[]="KIST";
+	char x[4]="KIST"; // This is incorrect, because, x can hold only 4 value where
+			last value is null value, so it can store only 3 characters
+	format specifier= %s;
+
+
+
+
+---------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main () {
+
+   char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+   printf("Greeting message: %s\n", greeting );
+   return 0;
+}
+
+
+or
+
+#include <stdio.h>
+
+int main () {
+   int i=0;
+   char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+   for(i=0;i<6;i++)
+    {
+       printf("%c",greeting[i]);  
+     }
+	
+   return 0;
+}
+
+
+Drawback of %s:
+
+%s is ok for single word.
+%s is not ok for multiple words or sentence.
+
+
+//WAP to ask user to input a sentence and count how many vowel and consonants are there and how many symbols are used?
+
+example of sentence: 
+  I am a good boy.
+
+KIST;   char x[5]="KIST"; or char x[]="KIST" or char x[5]={'K','I','S','T','\0'};
+
+I am a good boy.
+
+char x[17]="I am a good boy."
+char x[17]={'I',' ','a','m' and so on};
+
+
+program:
+
+
+#include <stdio.h>
+
+int main () {
+   char greeting[15];
+  printf("Enter a word or a sentence");
+  scanf("%s",&greeting);
+  printf("The entered input is %s",greeting);
+   return 0;
+}
+
+Output:
+Enter a word or a sentence: KIST
+The entered input is KIST.
+
+2nd case:
+
+Enter a word or a sentence: I eat rice.
+The entered input is I.
+which means, %s doesnt deal with space.
+
+
+So main conclusion is dont use printf or scanf while you are dealing with word or
+sentence. printf and scanf is ok for only a character using %c as format specifier.
+
+What shall we use then for word or sentence?
+: For word or sentence instead of using printf() and scanf(), use puts() or gets().
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

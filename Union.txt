@@ -1,0 +1,122 @@
+Union:
+
+
+Major question:
+
+What is difference between structre and union?
+
+
+A union is a special data type available in C that allows to store different data types in the same memory location. You can define a union with many members, but only one member can contain a value at any given time. Unions provide an efficient way of using the same memory location for multiple-purpose.
+
+Union and structure has same syntax except for keyword struct is replaced by union.
+
+While accessing members in both structure and union we use "."  .
+
+
+syntax:
+
+union  <union name>
+{
+	members;
+	members;
+	members;
+}(variable/array);
+
+example
+
+union student
+{
+	int id; 
+	char name[40]; 
+	int marks; 
+}x; 
+
+
+struct  student
+{
+	int id;
+	char name[40];
+	int marks;
+}x;     
+
+
+ 
+eg:
+#include <stdio.h>
+#include <string.h>
+ 
+union Data {
+   int i; //2
+   float f;  //4
+   char str[20];  //20
+};
+
+
+int main( ) {
+
+   union Data data;        
+ 
+   data.i = 10; 
+    printf( "data.i : %d\n", data.i);
+	 
+  data.f = 220.5;
+ printf( "data.f : %f\n", data.f);
+
+   strcpy( data.str, "C Programming");
+    printf( "data.str : %s\n", data.str);
+
+   return 0;
+}
+When the above code is run, the output is:
+
+data.i : 10
+data.f : 220.5
+data.str : C Programming
+
+
+Difference between Structure and Union:
+
+In structure , memory location is occupied for each and every individual members.
+But in union, although there might be number of members inside union,only 1 memory loaction will be allocated on the basis of highest memory size amongst the union's member.
+
+Since there is only one memory location in union, each and every member will access same memory location, due to with value overlap issue might be there.so we have to very careful while programming with union.
+
+-------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

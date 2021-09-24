@@ -1,0 +1,124 @@
+Graphics Function in C:
+
+Our screen is matrix of pixels.
+
+600 x 400
+
+1.Rectangle:
+
+We have function named rectangle() in graphics.h.
+
+Syntax:
+
+	rectangle(lefttop x,lefttop y,rightbottom x,rightbottom y);
+
+	rectangle(100,100,400,300);
+
+
+
+2. Circle:
+
+name: circle();
+syntax: circle(x center,y center,radius);
+
+
+3: To set background color:
+
+setbkcolor();
+
+syntax: setbkcolor(GREEN);
+
+
+4. To change color of graphics output:
+
+	setcolor();
+	syntax: setcolor(BLUE);
+
+
+5. To create a line:
+
+name: line
+
+line(x1,y1,x2,y2); // (x1,y1) and (x2,y2) are coordinates to two end points of a line.
+
+
+6. Outtextxy();
+
+syntax:
+
+outtextxy(x coordinate,y coordinate,string);
+
+in above syntax, x and y coordinate as coordinates of the place where you want to display you text.
+
+
+7.settextstyle():
+
+This functions sets the text style including properties like font type and font size.
+
+syntax:
+
+settextstyle(int font, int direction,int font_size);
+
+font: It specifies the font of the text.
+
+direction: It can be of two types:
+	a. HORIZ_DIR (left to right)
+	b. VERT_DIR (Bottom to top)
+
+font size: IT determines size of the font with a numerical value.
+
+font type:
+
+COLOR INT VALUES
+-------------------------------
+DEFAULT_FONT 0
+TRIPLEX_FONT 1
+SMALL_FONT 2
+SANS_SERIF_FONT 3
+GOTHIC_FONT 4
+SCRIPT_FONT 5
+SIMPLEX_FONT 6
+TRIPLEX_SCR_FONT 7
+COMPLEX_FONT 8
+EUROPEAN_FONT 9
+BOLD_FONT 10
+ heart 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

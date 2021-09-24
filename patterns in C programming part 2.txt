@@ -1,0 +1,245 @@
+a.
+
+1 1 1 1 1   //i=1, j=5
+2 2 2 2     // i=2, j=4
+3 3 3
+4 4
+5
+Note in pattern programs:
+	a. count no of rows and columns.
+	b. Check whether no of column is changing in each row or not. If it is not changing, inner loop i.e column is not dependent of outer loop ie. row.
+		If it is changing then the column depends upon row.
+
+
+#
+#
+void main()
+{
+	int i,j;
+	clrscr();
+	for(i=1;i<=5;i++)	//row 
+	{
+		for (j=i;j<=5;j++)
+		{
+		
+			printf("%d\t",i);
+		
+	
+		}
+	printf("\n");
+	}
+	getch();
+}
+
+-------------------------------------------------------------------------------------------------
+
+b.
+
+#
+#
+void main()
+{
+	int i,j;
+	clrscr();
+	for(i=1;i<=5;i++)	//row 
+	{
+		for (j=i;j<=5;j++)
+		{
+		
+			printf("%d\t",j);
+		
+	
+		}
+	printf("\n");
+	}
+	getch();
+}
+
+
+Output:
+
+1 2 3 4 5
+2 3 4 5
+3 4 5
+4 5
+5
+
+------------------------------------------------------------------------------------------------------
+
+c.
+
+#
+#
+void main()
+{
+	int i,j;
+	clrscr();
+	for(i=5;i>=1;i--)	//row 
+	{
+		for (j=i;j<=5;j++)
+		{
+		
+			printf("%d\t",j);
+		
+	
+		}
+	printf("\n");
+	}
+	getch();
+}
+
+
+Output:
+
+5
+4 5
+3 4 5
+2 3 4 5
+1 2 3 4 5
+
+
+-------------------------------------------------------------------------------------
+
+d.
+
+#
+#
+void main()
+{
+	int i,j;
+	clrscr();
+	for(i=5;i>=1;i--)	//row 
+	{
+		for (j=i;j<=5;j++)
+		{
+		
+			printf("%d\t",i);
+		
+	
+		}
+	printf("\n");
+	}
+	getch();
+}
+
+
+Output:
+5
+4 4
+3 3 3 
+2 2 2 2
+1 1 1 1 1
+
+----------------------------------------------------------------
+
+e.
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+
+#
+#
+void main()
+{
+	int i=0, j=0;
+	clrscr();
+	for(i=1;i<=5;i++)
+	{
+		for(j=1;j<=i;j++)
+		{	
+			printf("%d\t",j);
+		
+
+		}
+	printf("\n");
+	}
+	getch();
+}
+
+----------------------------------------------------------------
+f.
+
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+
+
+
+#
+#
+void main()
+{
+	int i=0,j=0;
+	clrscr();
+	for(i=5;i>=1;i--)
+	{
+		for(j=1;j<=i;j++)
+		{
+		
+			printf("%d\t",j);
+	
+	
+		}
+		printf("\n);
+	}
+	getch();
+}
+
+-----------------------------------------------------------
+
+#
+#
+void main()
+{
+	int i=0,j=0;
+	clrscr();
+	for(i=5;i>=1;i--)
+	{
+		for(j=1;j<=i;j++)
+		{
+		
+			printf("%d\t",i);
+	
+	
+		}
+		printf("\n);
+	}
+	getch();
+}
+
+5 5 5 5 5
+4 4 4 4
+3 3 3
+2 2
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

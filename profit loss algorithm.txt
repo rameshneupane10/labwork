@@ -1,0 +1,23 @@
+1. cp>sp, loss=cp-sp.
+2. sp>cp, profit= sp-cp
+3. sp=cp, neither profit nor loss.
+
+
+
+if
+
+if else
+
+
+
+
+
+Step 1: Start
+Step 2: Declare cp, sp, profit, loss.
+Step 3: Read values of cp and sp.
+Step 4: If cp> sp, loss=cp-sp.
+Step 5: Display loss and goto step no 9.
+Step 6: Else if sp>cp, profit=sp-cp
+Step 7: Display profit and goto step no 9.
+Step 8: Else, print neither profit nor loss.
+Step 9: Stop.

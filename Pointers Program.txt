@@ -1,0 +1,248 @@
+Things to learn in pointer:
+
+1. What is pointer?
+2. Relationship between pointer and variable.
+3. Relationship between pointer and array.
+
+
+---------------------------------------------------------------
+
+1. Pointer is a variable which stores address of another variable.
+
+eg:
+	int x;
+	int *p;
+	p=&x; // p is pointed towards x or p stores adress of x as its value.
+
+
+
+2. Relationship between pointer and variable.
+
+program to illustrate relationship between pointer and variable:
+
+a. A simple program using pointer.
+
+#include<stdio.h>
+#include<conio.h>
+
+void main()
+{
+	int x=10; //(variable name=x, variable value=10,variable address=1000)
+	int *p;  // (pointer name=p, pointer value=NULL,pointer address=2000) 
+
+	p=&x; 	// (pointer name=p, pointer value=1000, pointer address=2000)
+
+	printf("%d",x); //10.
+	printf("%p",&x);//1000 (Instead of %p, we cann use %x as well).
+	printf("%p",p); //Value of P, which is address of x.
+	printf("%p",&p); //Address of p which is 2000.
+	
+	printf("%d",*p); //*p=10, it is value which is stored in the address stored inside pointer.
+	getch();
+}
+
+
+------------------------------------------------------------------------------------
+if x is a variable and p is a pointer which is pointing towards x (p=&x),then.
+
+x=value of x. (%d)
+&x=address of x. (%x or %p)
+p=value of p,which is address of x. (%x or %p)
+&p=address of pointer p. (%x or %p)
+*p= the value which is actually stored inside the address being pointed by the pointer.
+    (%d)
+After pointing is done, x and *p are same.
+
+Example:
+
+#include <stdio.h>
+int main()
+{
+   int* pc, c;
+   
+   c = 22;
+   printf(" %p\n", &c);  //c address=5000.
+   printf("%d\n\n", c);  // c value=22.
+   
+   pc = &c; (pointer pc is pointing to variable c)
+   printf("%p\n", pc);  //5000.
+   printf(" %d\n\n", *pc); // 22
+   
+   c = 11;
+   printf("%p\n", pc);  //5000
+   printf("%d\n\n", *pc); // 11
+   printf("%d\n\n",c);//11
+   
+   *pc = 2;
+   printf("%p\n", &c); //5000
+   printf("%d\n\n", c); //2
+   return 0;
+}
+
+-----------------------------------------------------------------------------------------
+
+1. WAP to find sum of 2 numbers 
+
+Normal Program:
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a,b,sum=0;
+	printf("Enter 2 numbers a and b");
+	scanf("%d %d",&a,&b);
+	sum=a+b;
+	printf("\n The sum is %d",sum);
+	getch();
+}
+
+Using Pointers:
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a,b,sum=0;
+	int *p,*q,*r;
+	p=&a;
+	q=&b;
+	r=&sum;
+	
+	printf("Enter 2 numbers a and b");
+	scanf("%d %d",&a,&b);
+	*r=*p+*q;
+	printf("\n The sum is %d",*r);
+	
+	getch();
+}
+
+
+
+WAP to swap two numbers using pointers.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a,b,temp;
+	int *p,*q,*r;
+	printf("Enter 2 numbers");
+	scanf("%d %d",&a,&b); (a=100,b=200)
+	
+	p=&a;
+	q=&b;
+	r=&temp;
+	printf("Value before swapping are %d %d",*p,*q);
+//	printf("Value before swapping are %d %d",a,b);
+
+	*r=*p; //temp=a;
+	*p=*q; //a=b;
+	*q=*r; //b=temp;
+	printf("The swapped variable are %d and %d",*p,*q);
+//      printf("The swapped variable are %d and %d",a,b);
+	getch();
+}
+
+
+----------------------------------------------------------------------------------------
+
+
+Task: Before array,practice all the programs using pointers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

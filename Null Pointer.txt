@@ -1,0 +1,39 @@
+
+NULL pointers:
+
+Pointer which doesnt point anywhere is known as NULL pointers. and NULL is a default value defined in C already.
+
+Meaning of NULL= empty.
+
+
+Let us see a program of pointer:
+
+#include<stdio.h>
+
+
+
+void main()
+{
+	int a=1; //base address=500. //No memory free
+	int *p;
+	p=&a; // p=500 //p=NULL
+	if(p==NULL)
+	{
+		printf("\n Memory is not allocated");
+	}
+	else
+	{
+	
+		printf("The value of a is %d", *p); //1
+		printf("Address of a is %p",p); //500
+	}	
+getch();
+}
+
+output:
+
+------------------------------------------
+
+int a[20];
+int *p;
+p=a; //pointing

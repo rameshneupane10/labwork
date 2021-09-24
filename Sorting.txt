@@ -1,0 +1,297 @@
+---------------------------------------------------------------
+
+swapping program
+
+write a program to interchange value between 2 variables.
+
+
+#
+#
+void main()
+{
+
+	int a=0,b=0,temp=0;
+	clrscr();
+	printf("Enter two values");
+	scanf("%d %d",&a,&b);    // user has given two numbers as input.
+	temp=b;
+	b=a;
+	a=temp;
+	printf("The interchange value of a and b is %d and %d",a,b);
+	getch();
+}
+
+Output:
+a=5;
+b=5;
+temp=10;
+
+----------------------------------------------------------------------
+
+Sorting in Array:
+------------------------------
+
+what is sorting?
+=  Sorting is arranging data in an order which might be ascending or descending.
+
+
+
+
+1.WAP to ask user to input 10 numbers and arrange it in ascending order.
+
+ascending order: low to high.
+
+User input no:34,64,23,6,123,65,75,1,4,8
+Desired Result:1,4,6,8,23,34,64,65,75,123
+
+
+34,64,23,6,123,65,75,1,4,8
+
+Solution:
+
+int num[10]={23,64,34,6,123,65,75,1,4,8}; : User given input
+
+array name: num
+array size: 10
+array memory consumption: 20 bytes
+array data type: int.
+array index range:0-9
+
+ascending example:
+
+6,64,34,23,123,65,75,1,4,8
+
+1,64,34,23,123,65,75,6,4,8
+
+1,4,64,34,123,65,75,23,6,8
+
+1,4,6,8,23,34,64,65,75,123 : Final Answer4
+
+
+-----------------------------------------------------
+
+* * * * * 
+* * * *
+* * *
+* * 
+*
+
+for(i=1;i<=5;i++) // row   
+{
+	for(j=5;j>=i;j--) //column 
+	{
+		printf("* ");
+	}
+	printf("\n");
+}	
+
+--------------------------------------------------------
+
+Todays 
+1. Sorting code (ascending and descending).
+
+Descending (big to small) Code:
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+
+	int a[]={23,64,34,6,123,65,75,1,4,8};
+	int i=0,j=0,temp=0;
+	clrscr();
+	for(i=0;i<=9;i++) //1
+	{
+		for(j=i+1;j<=9;j++) //2-9
+		{
+			if(a[i]<a[j])  (Descending always <, ascending >)
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;	
+			}
+		}
+	}
+
+	printf("\n Descending order is:");
+	for(i=0;i<=9;i++)
+	{
+		printf(" %d",a[i]);
+	}
+getch();
+}
+
+Output:
+
+a[10]=23,64,34,6,123,65,75,1,4,8
+
+a[10]=123,75,65,64,34,23,8,6,4,1
+
+
+2. Dynamic input sorting.
+
+int a[5]; //correct declaration
+int a[5]={1,2,3,5,7}; //correct declaration
+int a[]={1,2,3,5,7}; //correct declaration
+
+int a[];// wrong declaration
+
+
+Dynamic input: User given input
+
+Question: WAP to ask user to input n numbers and sort them in ascending order.
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	
+	int size=30;
+	int a[size];
+	int i=0,j=0,temp=0,count=0;
+	clrscr();
+	label1:
+	printf("Enter how many numbers you want to sort");
+	scanf("%d",&count); //10-user wants to enter 10 numbers which will be placed at 0-9 index at array a;
+	if(count>size)
+	{
+		printf("\n sorry! I can accept only 30 numbers! Please try again");
+		goto label1;
+	}
+
+	for(i=0;i<=count-1;i++)
+	{
+		scanf("%d",&a[i]);
+	}   
+
+	for(i=0;i<=count-1;i++) //1
+	{
+		for(j=i+1;j<=count-1;j++) //2-9
+		{
+			if(a[i]<a[j])  (Descending always <, ascending >)
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;	
+			}
+		}
+	}
+
+	printf("\n Descending order is:");
+	for(i=0;i<=count-1;i++)
+	{
+		printf(" %d",a[i]);
+	}
+getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

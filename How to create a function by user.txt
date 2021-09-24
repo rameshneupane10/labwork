@@ -1,0 +1,262 @@
+
+How to create a function by ourself or how to create a user defined function?
+
+Ans:
+
+Before learning to create a user defined function, we need to understand the components that are used in a function driven
+program. There are 3 components, we must create or perform while creating a program with user defined function. They are:
+
+a. Function Declaration.
+b. Function Call.
+c. Function Definition.
+
+
+a. Function Declaration:
+
+It is prototype of function which means in function declaration, we are declaring 3 things:
+		i.  what is our function name going to be?
+                ii. What are the data type of the arguement/parameters that is going to be passed in a function? 
+                      or whether our function is a parametric or non parametric function?
+		iii. What is the return type after function performs its action?
+
+for eg:
+
+1.char a[5]="kist";
+int x;
+x=strlen(a); // here a is parameter or arguement.  
+
+i.e strlen() is a parametric function.
+
+2. exit();
+  Exit() is a function which doesn't take any parameter or arguement.
+Thats why exit() function is non parametric function.
+
+point to remember: Function declaration should be always above void main() or int main(). Function declaration should always 
+		   end with a semicolon ';'.
+
+
+Syntax for function declaration:
+
+ <return type> <function name>(arguements);
+
+
+For eg: If i am trying to make a function to find sum of 2 numbers and name the function as "Summation", then declaration would be
+
+   int Summation(int,int);
+
+
+
+2. Function call: (Activating the function)
+
+   Function call is always inside void main().
+   FUnction call should exactly follow the pattern in which function is declared.
+
+
+
+3. Function definition:
+   Function definition is the part where the code is written which is the exact working of the function.
+   Function definion is always outside void main. It doesnt end with semicolon';'.
+   It should also follow the exact pattern in which the function is declared.
+
+
+
+eg:
+WAP to find sum of 2 numbers.
+
+Program without function:
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+	{
+		int a,b,sum=0;
+		clrscr();
+		printf("Enter 2 numbers");
+		scanf("%d %d",&a,&b);
+		sum=a+b;
+		printf("\n The sum is %d",sum);
+		getch();
+	}
+
+
+
+Program with function:
+While we are using function we can use 4 formats:
+	a. with return , with parameter.
+	b. with no return , with parameter.
+	c. with return , no parameter.
+ 	d. no return , no parameter.
+
+Syntax for function declaration:
+
+ <return type> <function name>(arguements or parameters);
+
+
+
+
+a. with return , with parameter. //Declaration should be according to this format.//you only write data type in function declaration in case of variable.
+
+#include<stdio.h>
+#include<conio.h>
+
+int rambo(int,int,int);//function declaration.
+
+void main()
+{
+     int a,b,c;
+     int sum=0;	
+     clrscr();
+     printf("Enter 3 numbers");
+     scanf("%d %d %d",&a,&b,&c); a=3,b=4,c=5
+     sum=rambo(a,b,c);//function call: First check and Activation of the function. Function call should also follow function declaration format.
+     printf("The result is %d",sum); 
+     getch();
+ 
+}
+
+int rambo(int x,int y,int z)
+{
+	int result=0;
+	result=x+y+z;(3+4+5)=12
+	return result; //return always gets compiler back to where the function call was made.
+
+}
+
+
+
+b. with no return , with parameter.
+
+#include<stdio.h>
+#include<conio.h>
+
+void sum(int,int);
+
+void main()
+{
+	int a,b;
+	clrscr();
+	printf("Enter 2 numbers");
+	scanf("%d %d",&a,&b);  //a=5,b=6
+	sum(a,b); //calling portion
+        getch();
+}
+
+void sum(int x,int y)
+{
+      int result;
+      result=x+y;
+       printf("The sum is %d",result);
+}
+
+
+c. with return , no parameter.
+
+#include<stdio.h>
+#include<conio.h>
+
+int sum(); //declaration
+
+void main()
+{
+     int result=0;
+     result=sum(); //function call
+     printf("The sum is %d",result);
+     getch();
+}
+
+int sum()
+{
+    int a,b;
+    int c=0;
+    printf("Enter 2 numbers");
+    scanf("%d %d",&a,&b);
+    c=a+b;
+    return c;
+}
+   
+
+d. no return , no parameter.
+
+
+#include<stdio.h>
+#include<coni.h>
+
+void sum(); //declaration
+
+void main()
+{
+
+     sum(); //call
+     getch();
+}
+
+void sum()              //definition.
+{
+		int a,b,sum=0;
+		clrscr();
+		printf("Enter 2 numbers");
+		scanf("%d %d",&a,&b);
+		sum=a+b;
+		printf("\n The sum is %d",sum);
+}
+
+
+
+Assigments:
+
+1. WAP to find whether the number is palindrome or not using function. (Use a,b,c).
+2. WAP to find SI and CI using function. (Use a,b,c).
+
+	
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,211 @@
+
+Pointers :
+
+The Pointer in C, is a variable that stores address of another variable.
+
+A pointer is a variable that stores the address of another variable. Unlike other variables that hold values of a certain type, pointer holds the address of a variable. For example, an integer variable holds (or you can say stores) an integer value, however an integer pointer holds the address of a integer variable.
+
+
+
+Points to remember:
+
+1. whenever an application is in running state, then there is certain amount of memory consumption. (i.e. RAM consumption)
+2. In c programming, our output is evaluated is in run time.
+
+For eg: My program name is sum.c
+
+ int a,b,sum.
+printf.
+scanf.
+sum=a+b.
+print sum.
+
+If i run this code, sum.c is loaded in RAM.
+a,b, sum are the variable which are declared and used inside the program.
+So whenever a c program is in output state or running state, each and every
+variable declaration will consume a memory. For eg:
+
+In above case, a will consume 2/4 byte of RAM.
+               b will consume 2/4 byte of RAM.
+	       summ will also consume 2/4 byte of RAM.
+
+From memory point of view:
+
+Whenever a variable consumes a memory, it creates a placeholder of a certain nature.
+
+For eg: int x=5.
+
+A place in memory is created which is named x, and its value is 5, and x also has a certain address. Memory can be accessed through address as well.
+
+There are always 3 things whenever we declare a data of any type.
+
+for eg: float y=3.4;
+	A place in memory is created which is named y, and its value is 3.4 and y has its own address which is 000X44486.
+
+
+
+int a=5;
+
+a variable is created in memory which has value 5. a also has its address as well, which can be 34345353
+
+
+
+For reference : Take example of your house.
+House is a place holder.
+House keeps things inside it.
+House has it own address.
+
+We can identify our house by 2 ways:
+1. By the name of the person living inside the room.
+2. By house number.
+
+
+Real implementation in c:
+
+So by note, we learnt that:
+
+
+A pointer is a variable, which hold address of another variable.
+
+Normal variables:
+How do we declare? : int a; float y; char x;
+How do we assign value: int a=5; float y=1.5; char x='d';
+
+Pointer variables:
+How do we declare? int *a, float *y, char *x;
+
+
+The significance of & symbol:
+
+ we use & symbol in scanf();
+
+for eg:
+
+int a;   //we declared a variable named a, which can store integer value.
+printf("Enter value of a");  // we printed a line in output console.
+scanf("%d",&a);  
+
+In 3rd line: 
+	User enters a value and it is stored in the address defined for a.
+which means, & symbol represents address of a variable. So by this logic
+scanf() in above example means.
+
+Compiler is grabbing input from user and placing it in address of a.
+
+&a= address of a.
+
+
+int a=5;
+
+a=5. (If you write just variable name then that is value stored in the variable).
+&a= If you write & variable name, that is address of that variable. 
+
+
+
+How do we store address of a variable in a pointer?
+
+Things to know:
+
+If you are trying to use pointer to store address of a variable of a certain data type, then both the pointer and variable should be of same data type.
+
+
+For eg:
+
+int a=5;   //a is normal variable which has value 5, and lets suppose its address is 1000
+
+a=5, for value format specifer is %d.
+&a=1000, for address format specifier is %p.
+
+printf("%d",a);  // output=5
+printf("%p",&a); //output=1000.
+
+int *p;  //here p is a pointer variable.
+
+p=&a;  //here we assigned address of a in p.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

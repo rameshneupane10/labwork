@@ -1,0 +1,224 @@
+WAP to print table of 2 using while loop
+
+
+2 X 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 10 = 20
+
+
+#
+#
+void main()
+{
+	
+	int i=1, num=2, prod;
+	clrscr();
+	while(i<=10)
+	{
+		prod=num*i;
+		printf("\n%d x %d = %d",num,i,prod);
+		i++;
+	}
+getch();
+}
+
+
+
+   1. while loop
+   2. DO... while loop
+
+
+ why is while loop called entry controlled loop?
+
+
+ do... while is known as exit controlled loop.
+
+
+
+
+
+    syntax for do while:
+
+		do
+		{
+
+			codes	
+			increament/decreament
+
+
+		}(condition check);
+
+
+
+HW 1:  write down difference between while and do while loop with example and syntax. (BE= 4 marks)
+HW 2:  wap to print table of 2 according to yesterday format using do... while and for loop
+HW 3:
+	
+	1 x 1 =1       2 x 1 =2       3x1=3
+
+
+
+
+
+
+
+	1 x 10=10	2 x 10=20     3 x 10=30
+
+
+#
+#
+void main()
+{
+	int i=1;
+	clrscr();
+	while(i<=5)
+	{
+		printf("\n %d . KIST COLLEGE", i);
+		i++;
+	}	
+	getch();
+}
+
+Output
+
+1 . KIST COLLEGE
+2 . KIST COLLEGE
+3 . KIST COLLEGE
+4 . KIST COLLEGE
+5 . KIST COLLEGE
+
+
+do while:
+
+#
+#
+void main()
+{
+	int i=1;
+	clrscr();
+	do
+	{
+		printf("\n %d . KIST COLLEGE",i);
+		i++;
+	}while(i<=5);
+getch();
+}
+
+Output:
+10. KIST COLLEGE
+
+Loop is also known as iteration.
+
+3. For loop:
+
+
+syntax:
+		for(intialisation;condition;incremeant/decreamnet)
+
+
+
+#
+#
+void main()
+{
+
+	int i=0;
+	clrscr();
+	
+	for(i=1;i<=5;i++)
+	{
+	   printf("\n %d . KIST COLLEGE",i);
+		
+	}
+
+getch();
+}
+
+Output:
+
+1. KIST COLLEGE
+2
+3
+4
+5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+
+
+
+ 			Menu
+		1. Add
+		2. Sub
+		3. Mul	
+		4. Div
+
+
+#
+#
+Void main()
+{
+	int a, b, r, sum, sub, mul, div;
+	clrscr();
+	printf("\nMenu\n1.Add\n2.Sub\n3.Mul\n4.Div);
+	printf("Enter 2 nos");
+	scanf("%d %d",&a,&b);
+	printf("Enter your choice");
+	scanf("%d",&r);
+
+	switch(r)
+	{	
+		case 1:
+			sum=a+b;
+			printf("Result=%d",sum);
+		break;
+		case 2:
+			sub=a-b;
+			printf("Result=%d",sub);
+		break;
+		case 3:
+			mul=a*b;
+			printf("Result=%d",mul);
+		break;
+		case 4: 
+			div=a/b;
+			printf("Result=%d",div);
+		break;
+		default:
+			printf("You have entered option which is not in range");
+		break;
+	}
+
+getch();
+}
+
+		
+			
+		
+
+
+
+			Menu
+		a. Add
+		b. Sub
+		c. Mul
+		d. Div
+
+
+ (character is alphabet, word and sentence is string)
+
+  single alphabet or a character in c is written as 'a' ,'f', 'i'
+  word/sentence or string in c is written as "kist", " My subject is c programming"
+
+#
+#
+Void main()
+{
+	int a, b, sum, sub, mul, div;
+	char r;
+	clrscr();
+	printf("\nMenu\na.Add\nb.Sub\nc.Mul\nd.Div);
+	printf("Enter 2 nos");
+	scanf("%d %d",&a,&b);
+	printf("Enter your choice");
+	scanf("%c",r);
+
+	switch(r)
+	{	
+		case 'a':
+			sum=a+b;
+			printf("Result=%d",sum);
+		break;
+		case 'b':
+			sub=a-b;
+			printf("Result=%d",sub);
+		break;
+		case 'c':
+			mul=a*b;
+			printf("Result=%d",mul);
+		break;
+		case 'd': 
+			div=a/b;
+			printf("Result=%d",div);
+		break;
+		default:
+			printf("You have entered option which is not in range");
+		break;
+	}
+
+getch();
+}
+

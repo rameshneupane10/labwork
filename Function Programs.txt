@@ -1,0 +1,397 @@
+
+1. Program to find simple interest and compound interest by using function.
+	
+a. with return, with parameter.
+
+		
+#include<stdio.h>   // 
+#include<conio.h>
+#include<math.h>
+
+float SI(float,float,float);
+float CI(float,float,float);
+
+void main()
+{
+	float p,r,t,cresult,sresult;
+	clrscr();
+	printf("Enter principal, rate and time");
+	scanf("%f %f %f",&p,&r,&t);
+	sresult=SI(p,r,t);
+	cresult=CI(p,r,t);
+	printf("\n Simple interest= %f",sresult);
+	printf("\n Compound interest= %f,cresult);
+	getch();
+}
+
+float SI(float x,float y,float z)
+{
+     float result;
+     result=(x*y*z)/100;
+     return result;
+}
+
+float CI(float m,float n,float o)
+{
+    float g;
+	
+    g=m*(pow((1+n/100),o)-1);
+    return g;	
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Type Conversion in C programming:
+
+Type casting refers to changing an variable of one data type into another.
+
+a. Implicit Type Conversion
+		When the type conversion is performed automatically by the compiler without programmers intervention, such type of conversion is known as implicit type conversion
+		
+eg:
+
+int x;
+for(x=97; x<=122; x++)
+{
+    printf("%c", x);   /*Implicit casting from int to char thanks to %c*/
+}  
+
+
+output: a b c d e f g h and so on till z.// 97 98 till 122
+
+
+
+b. Explicit Type Conversion:
+
+The type conversion performed by the programmer by posing the data type of the expression of specific type is known as explicit type conversion.
+The explicit type conversion is also known as "type casting".
+
+
+int x;
+for(x=97; x<=122; x++)
+{
+    printf("%c", (char)x);   /*Explicit casting from int to char*/
+}
+
+
+
+2. Program for palindrome(without Function):
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int no=0,rem=0,rev=0,temp=0;
+	clrscr();
+	printf("Enter a number");
+	scanf("%d",&no);
+	temp=no;
+	while(no!=0)
+  	{
+		rem=no%10;
+		rev=rev*10+rem;
+		no=no/10;
+        }
+	if(rev==temp)
+	{
+		printf("\nThe given number is a palindrome number");
+	}
+	else
+	{
+		printf("\n The given number is not a palindrome number");
+	}
+	getch();
+}
+
+
+a. with return, with parameter.
+
+
+#include<stdio.h>
+#include<conio.h>
+
+int palindrome(int);
+
+void main()
+{
+    int num,result,num1,result1;
+    clrscr();
+    printf("Enter a number to check whether it is a palindrome or not");
+    scanf("%d %d",&num,&num1);
+    result=palindrome(num);
+    result1=palindrome(num1);
+	
+    if(num==result)
+	{
+		printf("\nThe given first number is palindrome");
+	}
+    else
+	{
+		printf("\nThe given first number is not palindrome");
+        }
+	 if(num1==result1)
+	{
+		printf("\nThe given second number is palindrome");
+	}
+    else
+	{
+		printf("\nThe given second number is not palindrome");
+        }
+getch();
+}
+
+int palindrome(int x)
+{
+	int rem=0;
+	int rev=0;
+	while(x!=0)
+	{
+		rem=x%10;
+		rev=rev*10+rem;
+		x=x/10;
+	}
+	return rev;
+}
+
+
+OR
+
+#include<stdio.h>
+#include<conio.h>
+
+int palindrome(int);
+
+void main()
+{
+    int num,result;
+    clrscr();
+    printf("Enter a number to check whether it is a palindrome or not");
+    scanf("%d",&num);
+    result=palindrome(num);
+    if(result==1)
+	{
+		printf("\nThe given number is palindrome");
+	}
+    else
+	{
+		printf("\nThe given number is not palindrome");
+        }
+    
+	
+getch();
+}
+
+int palindrome(int x)
+{
+	int rem;
+	int rev;
+	int temp;
+	temp=x;
+	while(x!=0)
+	{
+		rem=x%10;
+		rev=rev*10+rem;
+		x=x/10;
+	}
+		
+	if(temp==rev)
+	{
+		return 1;
+	}
+    else
+	{
+		return 0;
+        }		
+
+
+
+}
+
+
+
+b. with return, without parameter;
+
+
+#include<stdio.h>
+#include<conio.h>
+
+int palindrome();
+
+void main()
+{
+    int result;
+    clrscr();
+    result=palindrome();
+    if(result==1)
+	{
+		printf("\nThe given number is palindrome");
+	}
+    else
+	{
+		printf("\nThe given number is not palindrome");
+        }
+    
+	
+getch();
+}
+
+int palindrome()
+{
+	int rem,x;
+	int rev;
+	int temp;
+	printf("Enter a number to check whether it is a palindrome or not");
+	scanf("%d",&x);
+	temp=x;
+	while(x!=0)
+	{
+		rem=x%10;
+		rev=rev*10+rem;
+		x=x/10;
+	}
+		
+	if(temp==rev)
+	{
+		return 1;
+	}
+    else
+	{
+		return 0;
+        }		
+
+}
+
+
+c. without return, with parameter
+
+
+#include<stdio.h>
+#include<conio.h>
+
+void palindrome(int);
+
+void main()
+{
+    int num;
+    clrscr();
+    printf("Enter a number to check whether it is a palindrome or not");
+    scanf("%d",&num);
+    palindrome(num);
+	
+getch();
+}
+
+void palindrome(int x)
+{
+	int rem;
+	int rev;
+	int temp;
+	temp=x;
+	while(x!=0)
+	{
+		rem=x%10;
+		rev=rev*10+rem;
+		x=x/10;
+	}
+		
+	if(temp==rev)
+	{
+		printf("The number is palindrome");
+	}
+    else
+	{
+		printf("The number is not palindrome");
+        }		
+}
+
+
+
+Assignments:
+1. WAP to find whether the given number is prime or not, by using a,b,c format of function.
+2. WAP to find whether the given number is armstrong or not, by using a,b,c format of function.
+	
+
+
+
+
+What did we learn till date regarding function:
+1. What is function?
+2. Why is function needed?
+3. How many types of function are there under different category?
+4. What are the building blocks of the function?
+5. How to pass a variable or number of variables in a function?
+6. How to pass an array inside a function?   // next class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

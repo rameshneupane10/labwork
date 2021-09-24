@@ -1,0 +1,255 @@
+1. Branching
+a. Conditional Statements ( IF else)
+b. Switch case.
+
+2. Looping
+a. while
+b. do while.
+c. for
+
+
+3. Jumping
+a. break
+b. continue
+c. exit();
+d. goto
+
+
+Programs:
+
+WAP to take a number from a user and print it in reverse.
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int num=0,rev=0,rem=0;
+	clrscr();
+	printf("Enter a number to reverse:");
+	scanf("%d",&num);
+	while(num>0)
+	{
+   		rem=num%10
+		rev=rev*10+rem//reverse formula.
+		num=num/10
+	}
+	printf("\nThe reverse of your input number is %d",rev);
+
+getch();
+}
+
+
+Output:
+num:98547, rev=0,rem=0
+
+ENter a number to reverse: 98547
+rem=7
+rev=rev*10+rem=0*10+7=7
+num=9854
+
+rem=4
+rev= 7*10+4=74
+num=985
+
+
+rem=5
+rev=74*10+5=745
+num=98
+
+rem=8
+rev=745*10+8:7458
+num=9
+
+
+rem=9
+rev=7458*10+9=74589
+num=0
+
+----------------------------------------------------------------------------------------
+
+
+WAP to take a number from a user and print whether it is palindrome or not.
+
+Palindrome logic:
+
+If a number and its reverse is same, then it is called palindrome.
+
+1. User input
+2. Reverse
+3. If reverse and input number is same, it is palindrome or not.
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int num=0,rev=0,rem=0,temp=0;
+	clrscr();
+	printf("Enter a number:");
+	scanf("%d",&num);
+	temp=num;
+	while(num>0)
+	{
+   		rem=num%10
+		rev=rev*10+rem//reverse formula.
+		num=num/10
+	}
+	if(temp==rev)
+	{
+		printf("\nThe given number is palindrome");
+	}
+	else
+	{
+		printf("\n The give number is not palindrome");
+	}
+
+getch();
+
+}
+
+num=0
+temp=12321
+rev=12321 
+
+-----------------------------------------------------------------------
+
+WAP to take a number from a user and check whether it is Armstrong number or not.
+
+Armstrong number:
+An armstrong number is that number when the sum of individual powered digits by the total count ko no of digits is equal to the original number.
+
+3 digit:A number is an armstrong number if the original number and sum of cubes of individual digit of that number is same.
+4 digit: to the power 4.
+153=1 cube + 5 cube +3 cube
+1234= 1 to the power 4+2 power 4+3 power 4+5 power 4
+
+1634:
+number:234:8+27+64:99
+       153:1+125+27:153, hence 153 is armstrong number   	
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+	int num=0,sum=0,rem=0,temp=0,temp1=0,count=0;
+	clrscr();
+	printf("Enter a number:");
+	scanf("%d",&num); //1516
+	temp=num;   //temp=1516
+	temp1=num;  //temp1=1516
+	while(temp>0) 
+	{
+		rem=temp%10;  //6    //1     //5     //1
+		count=count+1; //1   //2      //3     //4
+		temp=temp/10;  //151   //15   //1      //0
+
+	}
+	while(num>0)
+	{
+   		rem=num%10;
+		sum=sum+pow(rem,count); 
+		num=num/10;
+	}
+	if(sum==temp1)
+	{
+		printf("\n The number is Armstrong number");
+	}
+	else
+	{
+		printf("\n The number is not Armstrong number);
+	}
+
+getch();
+}
+
+Output:
+
+num=153,sum=0,rem=0,temp=153
+
+rem=3
+sum=0+3*3*3=27
+num=15
+
+rem=5
+sum=27+5*5*5=27+125=152
+num=1
+
+rem=1
+sum=152+1*1*1=153
+num=0
+-------------------------------------------------------------------------------------------------------------------
+reverse, palindrome, armstrong program
+
+
+345: reverse 543
+
+
+345/10:34
+65645/10:6564/10:656/10/65/10/6 
+2342342/10:234234/10/23423/10/2342/10/234/10/23/10/2
+12/10:1
+644/10:64
+7575/10:757
+
+
+2345%10:5
+65645%10:5
+2342342%10:2
+12%10:2
+644%10:4
+7575%10:5
+
+-----------------------------------------------------
+user gave num
+
+
+while(num>0)
+{
+   rem=num%10
+	
+   num=num/10
+}
+
+num: 5467
+
+rem:7
+num:546
+
+rem:6
+num:54
+
+rem:4
+num:5
+
+
+rem:5
+
+-----------------------------------------------------------------------------------
+WAP to take number from user and print individual digits and also print number of digits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

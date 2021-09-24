@@ -1,0 +1,412 @@
+There are 2 memory allocation technique:
+
+a. Static Memory allocation.
+b. Dynamic Memory allocation.
+
+
+
+
+Static Memory Allocation
+---------------------------
+
+WAP to ask user to enter n numbers and arrange them in ascending order.
+
+#include<Stdio.h>
+
+void main()
+{
+
+	int a[50]; //Memory has already 50 blocks with 2 bytes each. total=100 bytes.
+	int n,i;
+	printf("Enter how many numbers you want to enter");
+	scanf("%d",&n); //n=20, how many blocks waster? 30 blocks wasted i.e 60 bytes is wasted.
+	for(i=0i<=n-1;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+
+
+While we declare array, it is static memory allocation, i.e in case of array, the memory is already allocated, so whether we use the allocated memory in full range or not, the memory occupied will not vary.
+
+In above code, when user declares int a[50], instantly 100 bytes of memory is occupied for array named 'a' which will remain with array 'a' till program is executed fully.
+
+In static memory allocation there is huge misuse of memory, since memory is allocated statically it might be occupying more than needed or more than user will use.
+
+
+One of another problem of static memory allocation is we can't increase our memory space if we need in future. For eg:
+
+int a[10];
+int i;
+	for(i)
+	{
+	printf
+	scanf (input a)
+	}
+
+and we realised that we need 5 more elements. Can you do that?
+ANs: No, since memory was allocated statically, we cannot add memory if we need in future.
+
+
+So major issues of static memory allocation are:
+1. Huge chance of Waste of memory or leaving memory unused decreasing efficiency of RAM. //malloc() and calloc() solves this issue in DMA.
+
+2. No extension of memory once it is declared. //realloc() solves this issue.
+
+
+So here comes in
+
+Dynamic Memory Allocation:
+----------------------------------
+
+Dynamic memory allocation is memory occupying technique in which memory is allocated as per requirement only. No extra memory is wasted.
+
+C provides some functions to achieve these tasks. There are 4 library functions provided by C defined under <stdlib.h> header file to facilitate dynamic memory allocation in C programming. 
+
+They are:
+a.malloc()
+b.calloc()
+c.free()
+d.realloc()   //These 4 functions are also known as memory management functions.
+
+a. Malloc()
+
+“malloc” or “memory allocation” method in C is used to dynamically allocate a single large block of memory with the specified size. It returns a pointer of type void which can be cast into a pointer of any form. It initializes each block with default garbage value.
+
+Syntax:
+
+ptr = (cast-type*) malloc(n*sizeof(datatype))
+
+For eg: I want to enter 25 integers.
+
+Static memory allocation:
+
+	int a[25];
+	int *p;
+	p=a;
+
+Dynamic memory allocation using malloc:
+
+	int *p;
+	p=(int*)malloc(25*sizeof(int)) 
+	
+eg: 
+
+
+WAP to ask user to enter n numbers and arrange them in ascending order.
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+      int *a,n,i,j,t;
+      printf("How many numbers you want to be sorted: ");
+      scanf("%d",&n); //14
+      a=(int *)malloc(n *sizeof(int));
+      if(a==NULL)
+	{
+		printf("Memory is not allocated");
+		exit(0);
+	}
+      else
+     {
+      printf("\nEnter %d Numbers: \n\n",n);
+      for(i=0;i<=n-1;i++)(first index=0, last index=13)
+      {
+            scanf("%d", (a+i));
+      }
+      for(i=0;i<n;i++)
+      {
+            for(j=0;j<=i;j++)
+            {
+                  if(*(a+i)<*(a+j))
+                  {
+                        t=*(a+i);
+                        *(a+i)=*(a+j);
+                        *(a+j)=t;
+                  }
+            }
+      }
+      printf("\nAfter Sorting in Ascending Order: \n");
+      for(i=0;i<n;i++)
+      printf("\n%d",*(a+i));
+      }
+      free(a);			
+      return 0;
+}
+}
+
+Task:
+1.WAP to ask user to enter n numbers:
+a. List the prime numbers.
+b. Find sum of prime numbers.
+c. Count of prime numbers.
+Using Dynamic Memory Allocation.
+
+2. Practice at least 5 different array programs using malloc().
+
+------------------------------------------------------------------------------------------------------------------------
+
+b. Calloc():
+
+“calloc” or “contiguous allocation” method in C is used to dynamically allocate the specified number of blocks of memory of the specified type. it is very much similar to malloc() but it initializes each block with a default value ‘0’.
+
+syntax for calloc:
+ptr = (cast-type*) calloc(n,sizeof(datatype));
+
+eg:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void main()
+{
+	int n=0,i, *p;
+	printf("Enter how many numbers do you want");
+	scanf("%d",&n); //5 i.e memory required for 5 numbers is 5*sizeof(int)
+	p=(int *)calloc(5,sizeof(int));
+	for(i=0;i<=4;i++)
+	{
+		printf("%d",*(p+i));
+	}
+	getch();
+}
+
+
+
+WAP to ask user to enter n numbers and arrange them in ascending order.
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+      int *a,n,i,j,t;
+      printf("How many numbers you want to be sorted: ");
+      scanf("%d",&n); //14
+      a=(int *)calloc(n,sizeof(int));
+      if(a==NULL)
+	{
+		printf("Memory is not allocated");
+		exit(0);
+	}
+      else
+     {
+      printf("\nEnter %d Numbers: \n\n",n);
+      for(i=0;i<=n-1;i++)(first index=0, last index=13)
+      {
+            scanf("%d", (a+i));
+      }
+      for(i=0;i<n;i++)
+      {
+            for(j=0;j<=i;j++)
+            {
+                  if(*(a+i)<*(a+j))
+                  {
+                        t=*(a+i);
+                        *(a+i)=*(a+j);
+                        *(a+j)=t;
+                  }
+            }
+      }
+      printf("\nAfter Sorting in Ascending Order: \n");
+      for(i=0;i<n;i++)
+      printf("\n%d",*(a+i));
+      }
+      free(a);			
+      return 0;
+}
+}
+
+--------------------------------------------------------------------------------------
+
+
+c. free()
+
+“free” method in C is used to dynamically de-allocate the memory. The memory allocated using functions malloc() and calloc() is not de-allocated on their own. Hence the free() method is used, whenever the dynamic memory allocation takes place. It helps to reduce wastage of memory by freeing it.
+
+Syntax:
+         free(pointer name);
+
+
+
+
+d. realloc():
+
+Realloc stands for reallocation.
+
+“realloc” or “re-allocation” method in C is used to dynamically change the memory allocation of a previously allocated memory. In other words, if the memory previously allocated with the help of malloc or calloc is insufficient, realloc can be used to dynamically re-allocate memory. re-allocation of memory maintains the already present value and new blocks will be initialized with the default garbage value.
+
+Syntax: 
+ 
+ptr = (cast type *)realloc(ptr, newSize);
+
+where ptr is reallocated with new size 'newSize'.
+
+Suppose i want to enter "Deepak".If i use array or static memory allocation:
+
+char s[]="Deepak";
+
+But while doing DMA
+#
+#
+void main()
+{
+	char *p;
+	p=(char *)calloc(6,sizeof(char));
+	strcpy(p,"Deepak");
+ //Suppose i want full name "Deepak Khadka";
+	
+	p= (char *)realloc(p,13*sizeof(char));
+
+
+eg:
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+   char *str;
+
+   /* Initial memory allocation */
+   str = (char *) malloc(15);
+   strcpy(str, "tutorialspoint");
+   printf("String = %s,  Address = %u\n", str, str);
+
+   /* Reallocating memory */
+   str = (char *) realloc(str, 19);
+   strcat(str, ".com");
+   printf("String = %s,  Address = %u\n", str, str);
+
+   free(str);
+   
+   return(0);
+}
+
+String = tutorialspoint, Address = 355090448
+String = tutorialspoint.com, Address = 355090448
+
+
+
+eg:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int *p, i, n;
+
+    printf("Initial size of the array is 4\n\n");
+    p = (int*)calloc(10, sizeof(int)); //4 blocks=8 bytes.
+
+    if(p==NULL)
+    {
+        printf("Memory allocation failed");
+        exit(1); // exit the program
+    }
+
+    for(i = 0; i < 4; i++) //input of 4 numbers which is pointed by pointer p.
+    {
+        printf("Enter element at index %d: ", i);
+        scanf("%d", p+i);
+    }
+
+    printf("\nIncreasing the size of the array by adding new 5 elements ...\n ");
+
+    p = (int*)realloc(p, 9 * sizeof(int));
+
+    if(p==NULL)
+    {
+        printf("Memory allocation failed");
+        exit(1); // exit the program
+    }
+
+    printf("\nEnter 5 more integers\n\n");
+
+    for(i = 4; i < 9; i++)
+    {
+        printf("Enter element at index %d: ", i);
+        scanf("%d", p+i);
+    }
+
+    printf("\nFinal array: \n\n");
+
+    for(i = 0; i < 9; i++)
+    {
+        printf("%d ", *(p+i) );
+    }
+
+    // signal to operating system program ran fine
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

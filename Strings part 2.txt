@@ -1,0 +1,266 @@
+Programs on strings:
+
+1. WAP to display word "RAMBO".
+
+#
+#
+void main()
+{
+    char a[6]="RAMBO"; or char a[]="RAMBO"; or char a[]={'R','A','M','B','O','\0'};
+    printf("The word is %s",a); or puts(a);
+    getch();
+}
+
+or
+
+#
+#
+void main()
+{
+    char a[6]="RAMBO";  
+    int i=0;
+    printf("\n The word is:");
+    for(i=0;i<6;i++)
+     {
+          printf("%c",a[i]);
+     }    
+    getch();
+}
+
+2. WAP to take a word from user and display.
+#
+#
+void main()
+{
+      char a[15];
+      printf("Enter a word:");
+      scanf("%s",&a); or gets(a);
+      printf("The entered word is %s",a) or puts(a);
+      getch();
+}
+
+3. WAP to print sentence "We are in lockdown."
+
+#
+#
+void main()
+{
+    char a[]="We are in lockdown."; or char a[20]="We are in lockdown.";
+    printf("The entered sentence is %s",a);
+    getch();
+}
+
+Note: Dont use %s ever while doing program related to sentence. %s is only ok
+ if you are dealing with single word.
+ The above program will have following output:
+
+Output:
+We (%s wont deal after space).
+
+So while dealing with sentence we always use puts to display.
+So correct program is
+
+
+#
+#
+void main()
+{
+    char a[]="We are in lockdown."; or char a[20]="We are in lockdown.";
+    printf("The entered sentence is:");
+    puts(a);
+    getch();
+}
+Output:
+The entered sentence is: We are in lockdown.
+
+4. WAP to ask user to enter a sentence and display.
+
+#
+#
+void main()
+{
+    char a[31];
+    clrscr();
+    printf("Enter sentence upto 30 characters");    
+    gets(a);
+    printf("\nThe entered sentence is:"); 
+    puts(a);
+    getch();
+}
+
+ASCII values:
+
+ASCII: American Standard Code For Information Interchange
+
+Each and every number letter and symbols have their respective ASCII value.
+
+a-z:97-122
+A-Z:65-90
+
+
+#
+#
+void main()
+{
+    char a;
+    clrscr();
+    printf("Enter a character:);
+    scanf("%c",&a);  //m
+    printf("The ASCII value of %c is %d",a,a);
+    getch();
+}
+
+Output:( If you display character using %c, then it displays that character, But if you display same character using %d, instead of display character it will display its
+ASCII value)
+Enter a character:m
+The ASCII value of m is 109.
+
+
+
+5. WAP to aks user to enter a character and display whether it is lowercase or uppercase.
+
+
+#include <stdio.h>
+ 
+int main() 
+{ 
+    char ch; 
+    printf("Enter the alphabet:");
+    scanf("%c",&ch); 
+   if(ch>=65 && ch<=90)
+ 
+      printf("upper case");
+ 
+    else if(ch>=97 && ch<=122)
+      printf("lower case");
+    
+    else
+     printf("Invalid input");
+return 0;
+}
+
+
+
+or
+
+#include <stdio.h>
+ 
+int main() 
+{ 
+    char ch; 
+    printf("Enter the alphabet:");
+    scanf("%c",&ch); 
+   if(ch>='A' && ch<='Z')
+ 
+      printf("upper case");
+ 
+    else if(ch>='a' && ch<='z')
+      printf("lower case");
+    
+    else
+     printf("Invalid input");
+return 0;
+}
+
+
+6. WAP to ask user to enter a sentence and determine how many vowel, consonants, space, lowercase and uppercase alphabets are present.
+
+
+7. WAP to print ASCII value from a-z. 
+
+8. WAP to print ASCII value from A-Z.
+
+
+format of output should be like:
+
+a=97 or A=65
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      

@@ -1,0 +1,383 @@
+WAP to ask user to enter (name, age and salary )of 10 person and find out the person name who has lowest salary.
+
+
+
+In the above given program, we might think we could solve this progam by doing following declaration separately:
+int salary[10];
+int age[10];
+char name[10][30];
+But in fact, this wont work because, the above mentioned 3 arrays are different memory blocks. Change in data of one of the array wont effect another array which results in mismanagment of data within memory.
+
+For eg: If we arrage salary on the basis of descending, the memory location of array salary will be only affected leaving the rest of 2 arrays i.e age and name unaffected which would result in huge mismatch of data.
+
+
+So how do we solve this kinds of problems?
+
+"We use structures"
+
+---------------------------------------------------------------------------
+
+Structures in C:
+
+Structures are used to represent a record. A record has more than one data in it.A structure is a user defined data type in C. A structure creates a data type that can be used to group items of possibly different types into a single type.
+
+For eg: If i am taking record of a student, the field of data of interest:id, name, phone number, email address.
+
+If i am taking record of an employee, the field of data of interest: emp_id,name,location,salary.
+
+Ifi am taking record of goods, the field of data of interest: name,purchase date,CP,SP,Profit.
+
+
+If i am making contact list of BIT BATCH 2077, then what would be the data i would keep?
+Ans: Name,id,Pcontactno,Mcontactno,Fcontact,address.
+
+
+Syntax of declaring a structure: (always above void main)
+	
+struct <structure name> {
+
+   member definition;
+   member definition;
+   ...
+   member definition;
+} <one or more structure variables>; //last part is optional. 
+
+
+eg:
+	struct contact 
+	{
+			
+		int id;		
+		int age;
+		int salary;
+	};
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+#WAP to aks user to enter id, age and salary of 3 people and print them.
+
+#include<stdio.h>
+
+struct info
+{
+	int id;
+	int age;
+	int salary;	
+};
+//This is your data type which you can use in below program
+
+void main()
+
+{
+	
+	struct info ram,shyam,hari; // Here ram, shyam, hari are 					variables of data type "struct 							info"	
+/* In order to access data in structure we use structure variable/array name.member
+	or structure varaible/arrayname->member. */
+
+	printf("Enter details of ram");
+	scanf("%d %d %d",&ram.id,&ram.age,&ram->salary);
+	printf("Enter details of shyam");
+	scanf("%d %d %d",&shyam.id,&shyam.age,&shyam.salary);
+	printf("Enter details of hari");
+	scanf("%d %d %d",&hari.id,&hari.age,&hari->salary);
+
+//print data of hari only
+
+	printf("\n Details of hari is");
+	printf("Hari id=%d\nHari age=%d\nHari salary=		%d",hari.id,hari.age,hari.salary);
+
+getch();
+
+}
+
+In the above code, we learnt 3 things:
+a. Declaration of structure.
+b. How to declare variable of structures.
+c. How to access members of structures.
+----------------------------------------------------------------------
+
+Tips:
+1. 
+
+while declaring structure:
+
+
+struct Books
+{
+	char name[40];
+	int price;
+	char author[40];
+	int edition;	
+}C,FOIT,Math,TC,SEIT;  //This is equivalent to doing 
+			struct books C,FOIT,Math,TC,SEIT; inside void 			main().
+
+void main()
+{
+		
+	printf("Enter details of C programming books");
+	gets(c.name);
+	scanf("%d",&c.price);
+	gets(c.author);
+	scanf("%d",&c.edition);
+
+	we do this same activity for 4 times for rest of the books;
+
+-------------------------------------------------------------------------
+
+WAP to ask user to enter 2 times in hour, minutes and second and add them.
+
+
+#include<stdio.h>
+
+struct Time
+{
+	int hr;
+	int min;
+	int sec;
+}t1,t2,r;
+
+void main()
+{
+	printf("Enter details of first time");
+	scanf("%d %d %d",&t1.hr,&t1.min,&t1.sec); (1:41:33)
+	printf("\nEnter details of second time");
+	scanf("%d %d %d",&t2.hr,&t2.min,&t2.sec); (1:20:30)
+//Desired result after adding t1 and t2:(3:02:03)
+	r.hr=t1.hr+t2.hr; //2
+	r.min=t1.min+t2.min; //61
+	r.sec=t1.sec+t2.sec; //63  (2:61:63)
+	if(r.sec>60)
+	{
+		r.sec=r.sec%60; // 63%60=3
+		r.min=r.min+1;  //62
+	}
+	if(r.min>60)
+	{
+		r.min=r.min%60;
+		r.hr=r.hr+1;
+	}
+	printf("\nThe added time is %d:%d:%d",r.hr,r.min,r.sec);
+getch();
+}
+------------------------------------------------------------------------
+
+WAP to swap 2 structures:
+
+#include<stdio.h>
+
+struct random
+{
+	int x;
+	int y;
+}first,second,temp;
+
+void main()
+{
+	printf("\nEnter details of first:");
+	scanf("%d %d",&first.x,&first.y);
+	printf("\nEnter details of second:");
+	scanf("%d %d",&second.x,&second.y);
+	temp=first;
+	first=second;
+	second=temp;
+	
+	//print the result yourself.
+
+}
+
+
+
+--------------------------------------------------------------------
+
+In the examples above of structures, we declared structure of a certain name with numbers of members inside it. And we declared variables of those structure.
+
+Now we will learn "Array of structures".
+
+Question:
+
+WAP to enter name,id and salary of 10 employees, and display details of employee with highest salary.
+
+
+#include<stdio.h>
+
+struct emp
+{
+	char name[25];
+	int id;
+	int salary;
+};
+
+
+void main()
+{
+	struct emp s[10],temp;
+	int i=0,j=0;
+	printf("\n Enter data:");
+	for(i=0;i<10;i++)
+	{
+		printf("Enter name of %d person",i+1);
+		gets(s[i].name);
+		printf("Enter id of %d person",i+1);
+		scanf("%d",&s[i].id);
+		printf("Enter salary of %d person",i+1);
+		scanf("%d",&s[i].salary);
+	}
+
+	for(i=0;i<10;i++) 
+	{
+		for(j=i+1;j<10;j++) 
+		{
+			if(s[i].salary<s[j].salary)
+			{
+				temp=s[i];
+				s[i]=s[j];
+				s[j]=temp;
+			}
+		}
+	}
+
+	printf("\nThe details of highest salary person is:");
+	printf("\n Name:");
+	puts(s[0].name);
+	printf("\n Id=%d",s[0].id);
+	printf("\n salary=%d",s[0].salary);
+	getch();
+}
+
+
+
+Conclusion:
+
+In above example, we created an array of name s with size 10 whose data type was "struct emp". So basically, we created array of structure named emp. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

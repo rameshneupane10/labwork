@@ -1,0 +1,78 @@
+What is function?
+ 
+Function is a block of code that performs a specific task and can be used repeatedly again and again whenever necessary.
+
+strlen(): It is a function.
+
+Why do we need function?
+
+Let’s say you are writing a C program and you need to perform a same task in that program more than once. In such case you have two options:
+
+a) Use the same set of statements every time you want to perform the task.
+b) Create a function to perform that task, and just call it every time you need to perform that task.
+
+
+Types of function:
+
+There are two types of function in C programming:
+
+1. Standard library functions: 
+Functions which are already defined in C by the system itself with a library file.
+
+For example: If we want to use printf(), we need to write include<stdio.h>. Here printf is a function which perform a task by printing whatever user has typed in between the paranthesis (""). And stdio.h is a library file, where the action related to printf is already defined.
+
+So whenever compiler meets printf(), it checks upon  the stdio.h library file and perform the action.
+
+Another example: strrev(): Strrev() is a string handling function which reverses the string. The reversing code is already listed in the library file, string.h. So whenever the compiler meets strrev(), it checks its operation from string.h library file and perform the related task.
+
+
+2. User-defined functions
+
+Menu
+1. Average Between 1-100
+2. Average Between 101-200
+3. Average Between 201-300
+4. Average Between 301-400
+5. Exit
+
+Code:
+
+switch(choice)
+{
+   case 1:
+      code for average between 1to 100.
+	break;
+   case 2:
+        code for average between 101-200.
+        break;
+   case 3:
+	code for average between 201-300.
+        break;
+   case 4:
+	code for average between 301-400.
+	break;
+ case 5:
+	exit();  //stdlib.h
+ }
+
+In above example, the drawback is from case 1 to case 4, we will be writing same code
+again and again, by just changing the required range.
+
+
+But what if? We could write the code only once, since the nature for all case is same
+and use that code repeatedly whenever needed by just changing the range.
+
+So function is a better approach, if we are dealing with same block of code over and over again. For which the programmer has to build a function himself. 
+In above example, programmer has to build a function himself/herself in order to solve
+the task. Such functions created by user in order to solve a specific task is known as user-defined function.
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+Graphics in C:
+
+graphics.h = library file.
+
+
+what do you understand by term "device drivers" in computer?
+
+
+Computer has input and output device.
+
+
+Input:Keyboard,Mouse.
+Output:Screen,Printer,Speaker.
+
+
+Device Drivers:
+
+We have input and output devices in our computer system.
+
+ A driver, or device driver is basically a software, which is a set of files that tells a piece of hardware how to function by communicating with a computer's operating system.
+
+Important initial 2 steps while doing graphics programming in C:
+
+1. Always include grahics.h file in your code.
+2. Always initailize drivers after starting main().
+
+
+
+Skeleton Layout of graphics code in C:
+
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+
+
+int main()
+{
+   int gd= DETECT, gm;   // label 1
+
+   initgraph(&gd, &gm, "C:\\TURBOC3\\BGI"); //;label 2
+
+	//These above 2 lines code are initializing device drivers and making drivers ready for the program.
+       
+		<Whatever code you want to write to display graphics>
+	
+
+   getch();
+   closegraph();
+   return 0;
+}
+
+Let us understand few terms used in skeleton program above:
+
+label 1:
+While initializing device drivers, we always should initialise two things which are
+	a. Graphics Driver. (gd)
+	b. Graphics Mode. (gm)
+
+	Now,if we see above we can see we have set gd=DETECT.
+	
+	DETECT is a macro which when set helps to find graphics driver automatically.
+
+label 2:
+	we are intiailising graphics system.
+	
+syntax : 
+initgraph(int *graphicsdriver,int *graphics mode, pathtodrive)  
+
+BGI=Borland Graphics Interface.
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

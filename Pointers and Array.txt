@@ -1,0 +1,484 @@
+Here we will learn how pointers and array works:
+
+
+definition of array:  Array is collection of data of similar data type.
+	for eg: 
+	int a[10]= a is an array which can store 10 numbers.
+	int a= a is a variable which can store 1 number;
+
+
+definition of pointer: Pointer is a variable but instead of value, it stores address of another variable/array.
+
+
+----------------------------------------------------------------------------
+
+We can solve array and pointers in 2 ways.
+1. By using array name itself as pointer. (Here we dont declare a pointer).
+2. By using a pointer variable and relating with it an array.
+
+
+1. By using array name itself as a pointer.
+
+Golden rule: &x[i] is equivalent to x+i and x[i] is equivalent to *(x+i).
+	Value print=x[100]=*(x+100);
+	Value input=&x[98]= x+98;
+
+
+
+Solution:
+
+    Important concept to learn before learning pointers and array relation:
+
+a. If there is array char char kist[3]={'a','b','c'};. Suppose the base address for kist array is 2000,which means the starting address of array kist is 2000. Since the starting of array kist has kist[0] index, the address for kist[0] is also 2000.
+
+kist[0]= a,address=2000.
+kist[1]= b,address=2001. (Here the address increased by 1,why?
+Answer: Because the array kist is of char data type and in char data type it consume 1 byte.
+kist[2]= c,address=2002.
+
+b. double balance[50];
+	Here balance array is created, of double data type which can store 50 values.
+	first index: balance[0]
+	last index:   balance[49]
+	Imp thing:
+		In above array, balance is a pointer to &balance[0], which is the address of the first element of the array balance. Thus, the following program fragment assigns p as the address of the first element of balance.
+
+eg:
+#include <stdio.h>
+
+int main () {
+
+   /* an array with 5 elements */
+   double balance[5] ;
+
+   int i;
+
+    printf("Enter 5 values");
+	for(i=0;i<=4;i++)
+	{
+		scanf("%f",&balance[i]);	
+	}
+
+   printf( "Array values using balance as address\n");
+	
+   for ( i = 0; i < 5; i++ ) {
+      printf("\n%f",balance[i]);
+   }
+ 
+   return 0;
+}
+
+If you are doing array and pointers program, but not declaring any pointers then
+&x[1] is equivalent to x+1 and x[1] is equivalent to *(x+1).
+&x[2] is equivalent to x+2 and x[2] is equivalent to *(x+2).
+we can result:
+&x[i] is equivalent to x+i and x[i] is equivalent to *(x+i).
+
+-----------------------------------------------------------------------------
+
+In variable case:
+
+int a=5;
+int *p;
+p=&a;
+
+printf("By using variable=%d",a);
+printf("By using  pointer=%d",*p);
+
+
+In array case (without using pointer variable):
+
+int a[5]={1,2,3,4,5};
+/*       Here array name=a.
+         array firstindex= a[0].Suppose a[0] has address=200, then a[4] address is 208
+	 base address of array a=200.
+	 starting address of array a=200. (Because, starting address,base address and          address of first index mean the same thing in an array)
+	By definition learnt above, array name stores base address of array.
+	so a=&a[0];
+*/
+
+printf("Normal array method=%d",a[1]);
+printf("By using array name as pointer=%d",*(a+1));
+
+
+Printf("Enter value at 4th index");//Normal scan in array
+scanf("%d",&a[1]);
+
+
+Printf("Enter value at 4th index");//scanning in array using array name as pointer.
+scanf("%d",a+1);
+
+-----------------------------------------------------------------------------------------------------------
+
+2. By using a pointer variable and relating with it an array.
+
+Things to know:
+
+eg:
+
+int a[5];
+
+datatype=int.
+size=5.
+memory consumption=10 bytes.
+starting/base address= a which is equivalent &a[0].
+
+
+a. Program with normal array
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[5];
+	int i=0;
+	clrscr();
+	printf("\n Enter elements of array:");
+	for(i=0;i<=4;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("\n The array list is:");
+	for(i=0;i<=4;i++)
+	{
+		printf("%d\n",a[i]);
+	}
+getch();
+}
+
+b. Program with array as pointer.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[5];
+	int i=0;
+	clrscr();
+	printf("\n Enter elements of array:");
+	for(i=0;i<=4;i++)
+	{
+		scanf("%d",a+i);
+	}
+	printf("\n The array list is:");
+	for(i=0;i<=4;i++)
+	{
+		printf("%d\n",*(a+i));
+	}
+getch();
+}
+
+b. Program with array and a pointer pointing to that array.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[5]; // Array name =a, base address of array= &a[0] or a.
+	int *p;
+	int i=0;
+	p=&a[0]; //p=a;  (Both the statement does same thing i.e in both case base         address of array a is assigned to pointer p.)
+	clrscr();
+	printf("\n Enter elements of array:");
+	for(i=0;i<=4;i++)
+	{
+		scanf("%d",p+i);
+	}
+	printf("\n The array list is:");
+	for(i=0;i<=4;i++)
+	{
+		printf("%d\n",*(p+i));
+	}
+getch();
+}
+
+
+---------------------------------------------------------------------------------------
+
+Pointers with one dimension array:
+
+
+a.int a[10]; (Here array name is used as pointer)
+
+scanf= a+i.
+printf= *(a+i).
+
+
+b. int a[10];
+   int *p;
+   p=a; or p=&a[0];
+   scanf= p+i;
+   printf=*(p+i);
+
+
+Concept of "Pointer to an Array":
+
+
+Background or revision of normal pointer and array:
+
+//In any given array lets say int a[5], 5 is the number of items that array 'a' can store, int is that data which is going to be contained inside array 'a'.
+And 'a' is name of that array as well as it also stores base address or starting address of array 'a'.
+	/* We need to understand one thing here. &a[0] is base address or address of first element of array a ie. address of a[0] or starting address of array a.
+	
+a[3],p+3,which means in pointer if we add a number or integer beside that pointer name, then it represents index of array.
+
+In one dimension array , while using pointer
+
+scanf always deals with address= p+i  // &a[i]
+printf always deals with value=*(p+i)  // a[i]
+
+eg:
+    int a[5]={1,2,3,4,5};
+   int *p,i=0;
+   p=&a[0]; or p=a;  
+   for(i=0;i<=4;i++)
+   {
+	printf("\n Address of i index is %p",p+i);
+   }
+
+Output:
+ Address of 0 index is 100
+ Address of 1 index is 102
+ Address of 2 index is 104
+ Address of 3 index is 106
+ Address of 4 index is 108
+
+
+
+New concept: Pointer to an array.
+
+  How do we declare pointer to an array:
+
+ eg:
+
+
+#include<stdio.h>
+
+int main()
+{
+	
+	int *p; // If we do *p, then even though it points to an array, it points one element at a time.
+	int (*ptr)[5]; //If we do (*p)[5], then it will point to whole array block at once.
+	int arr[5];
+	p = arr; //starting address of arr is assigned to p.
+	ptr = &arr[0];//starting address of arr is assigned to ptr.  
+	printf("p = %p, ptr = %p\n", p, ptr);
+	p++; or p=p+1
+	ptr++; or ptr=ptr+1
+	printf("p = %p, ptr = %p\n", p, ptr);
+	return 0;
+}
+
+Output:
+p = 0x7fff4f32fd50, ptr = 0x7fff4f32fd50
+p = 0x7fff4f32fd54, ptr = 0x7fff4f32fd64
+
+
+
+
+
+
+
+  Here ptr is a pointer that can point to an array of 10 integers.
+
+We need to learn, what is difference between *p, and (*ptr)[5]?
+
+Ans: *p is a pointer which points to a variable at a time, when used with array, it will only point to a single index at a time.
+
+But (*p)[5] is a pointer to whole array, it doesnt point 1 element but rather it points to whole array a time.
+
+
+
+-----------------------------------------------------------------------------
+
+
+
+Final Conclusion:
+
+
+In 1-D array, whenever we are using pointer,  use *p only.
+
+
+scanf= (p+i);
+printf= *(p+i);
+
+eg:
+
+int a[4];
+int *p,j;
+p=&a[0];   or p=a; //pointing
+
+
+
+	for(j=0;j<=4;j++)
+	{
+		scanf("%d",(p+i));
+	}
+
+
+	for(j=0;j<=4;j++)
+	{
+		printf("%d",*(p+i));
+	}
+
+}
+
+
+
+
+In 2-D array, whenever we are using pointer, never use *p.
+
+Use (*p)[columnsize];
+
+scanf= *(p+i)+j;
+printf= *(*(p+i)+j);
+
+eg:
+
+int a[4][5];
+int (*p)[5],i,j;
+p=a; // pointing : dont use p=&a[0][0] in 2-D array case,only p=a will work.
+
+for(i=0;i<=3;i++)
+{
+	for(j=0;j<=4;j++)
+	{
+		scanf("%d",*(p+i)+j);
+	}
+}
+
+for(i=0;i<=3;i++)
+{
+	for(j=0;j<=4;j++)
+	{
+		scanf("%d",*(*(p+i)+j));
+	}
+printf("\n");
+}
+
+
+
+-------------------------------------------------------------------------
+Task for the day.
+
+1. Do matrix multiplication ( using pointer and array together).
+
+2. Practice all the program of arrays using pointer( Both using array as pointer and using pointer and array separately).	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

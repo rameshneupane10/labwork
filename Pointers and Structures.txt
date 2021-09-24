@@ -1,0 +1,104 @@
+Pointers and Structure (DMA in structure):
+
+
+THe concept of pointer in structure is same as it used to  work with array.
+
+
+for eg:
+
+While using DMA normally:
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+void main()
+{
+
+	int i=0,n;
+	int *p;
+	clrscr();
+	printf("\n ENter how many numbers do you want to enter");
+	scanf("%d",&n);  //5
+	p=(int *)malloc(5*sizeof(int));
+	if(p==NULL)
+	{
+		printf("\nMemory not found");
+	}
+	printf("\n Enter inputs");
+	for(i=0;i<5;i++)
+	{
+		scanf("%d",p+i);
+	}
+	printf("\n Display output");
+	for(i=0;i<5;i++)
+	{
+		printf("\t%d",*(p+i));
+	}
+	getch();
+}
+
+
+While use DMA in structure:
+
+WAP to take record of 5 employees and display result using DMA:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct emp
+{
+	int id;
+	int salary;
+	char name[20];
+};
+
+void main()
+{
+
+	int i=0,n;
+	struct emp *p;
+	clrscr();
+	printf("\n Enter how many records do you want to enter");
+	scanf("%d",&n);  //3
+	fflush(stdin);
+	p=(struct emp *)malloc(n*sizeof(struct emp));
+	if(p==NULL)
+	{
+		printf("\nMemory not found");
+		exit(1);
+	}
+	printf("\n Enter inputs");
+	for(i=0;i<5;i++)
+	{
+		scanf("%d",&(p+i)->id);
+		fflush(stdin);
+		scanf("%d",&(p+i)->salary);
+		fflush(stdin);
+		gets((p+i)->name);
+		fflush(stdin);
+	}
+	printf("\n Display output");
+	for(i=0;i<5;i++)
+	{
+		printf("\t%d",(p+i)->id);
+		printf("\t%d",(p+i)->salary);
+		printf("\t");
+		puts((p+i)->name);
+		printf("\n");
+	}
+	free(p);	
+	getch();
+}
+
+
+
+IN DMA in structre 
+1.we always use -> instead of .
+2. While scanf we use & (like normal array program)
+3. While printf we use only pointer.member name without * (like array program).
+
+
+
+
+

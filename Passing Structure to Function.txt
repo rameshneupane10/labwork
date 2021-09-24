@@ -1,0 +1,189 @@
+
+Passing Structure to function:
+--------------------------------------------
+
+
+3 basic parts of function are:
+
+a. Function Declaration.
+b. Function call.
+c. Function definition.
+
+case 1:
+If we are passing 1 integer variable to a function with integer return type,
+our declaration will be like,lets say function name is kist.
+
+int kist(int,int,int);
+
+
+case 2:
+If we are passing 1 array to a function with no return type, our declaration will be:
+
+void kist(int [],int []);
+
+
+case 3:
+If we are passing 1 address to a function with no return type, our declaration will be:
+
+void kist(int *);
+
+
+In all the above 3 case, data type =int.
+In case 1, we sent 1 variable of int data type inside our function.
+In case 2, we sent 1 array of int data type inside our function.
+In case 3, we sent address of 1 variable of int data type inside our function.
+
+While studying structure we have already known that structure is also a data type i.e user defined data type.
+
+so lets say i have a structure named emp.
+
+
+struct emp
+{
+	char name[40];
+	int id;
+	int salary;
+}s;
+
+So lets say i want a function which takes a structure variable as parameter with no return, function name is kist.so declaration will be like:
+
+
+#include<stdio.h>
+
+struct emp
+{
+	int id;
+	int salary;
+};
+
+void kist(struct emp); //This means i am sending 1 structre 	variable to a function just like if i did void kist(int), 	i am sending 1 integer variable.
+
+void main()
+{
+
+	struct emp x;
+	printf("Enter details");
+	scanf("%d %d",&x.id,&x.salary);
+	kist(x);
+	getch();
+}
+
+void kist(struct emp y)
+{
+	printf("Salary=%d \n Id=%d",y.salary,y.id);
+}
+
+
+In the above program, we learnt how to pass a structure variable to our function.
+------------------------------------------------------------------
+
+Passing array of structure to a function:
+
+While we are passing array of structure to a function, we simply follow all the normal conventions we use while passing array of other data types to a fucntion. The only thing to focus is on the name of the data type.
+
+eg:
+
+#include<stdio.h>
+#include<conio.h>
+
+struct emp
+{
+	int id;
+	int salary;
+}x[3];
+
+void kist(struct emp []); 
+
+void main()
+{
+	int i=0;
+	printf("\n Enter details");
+	for(i=0;i<3;i++)
+	{
+		scanf("%d %d",&x[i].id,&x[i].salary);	
+	}
+	
+	kist(x);
+	getch();
+}
+
+void kist(struct emp y[])
+{
+	int z=0;
+	printf("\nDetails are");
+	for(z=0;z<3;z++)
+	{
+		printf("\n %d \t %d",y[z].id,y[z].salary);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

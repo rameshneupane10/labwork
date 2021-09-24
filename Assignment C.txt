@@ -1,0 +1,24 @@
+
+
+WAP to enter record of 10 employees with id, name and salary.Find out the id and salary of a certain named person searched by the user.
+
+
+10 employee
+
+ram 
+hari
+sita
+gita
+rita
+motu
+patlu
+iron man
+hulk
+thor
+
+Enter the name of person whom you want to search:RAM
+
+Name 
+id
+salary
+

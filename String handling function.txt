@@ -1,0 +1,571 @@
+String handling functions:
+
+
+Functions we have already learned:
+
+Whenever function word is used, () will come up.
+
+
+1. exit(); // This function takes program to end, i.e getch();
+2. printf(); // this prints statement in output
+3. scanf(); this function takes input from user.
+
+
+There are 2 type of function on basis of parameter.
+1. parametric function
+2. non paramertic function.
+
+1. parametric function: Those function which take some parameters in it.
+
+    eg: printf(), scanf(), puts(), gets()	
+
+
+2. non-parametric function: Those fucntion which donot take parameters in it.
+		eg: exit(), main()
+
+
+
+In C programming, We have many functions which are used specially to handle strings. For string handling function, we need to include a library file which is
+      string.h
+
+List of generally used string handling function:
+1.strlen(): This function counts no of characters.
+2.strrev(): This function reverses a string.
+3.strcpy()
+4.strcmp()
+5.toupper()
+6.tolower()
+7.strupr()
+8.strlwr()
+9.strcar()
+
+
+1. strlen():
+   This function 'returns' the length or total number of characters in the 
+   string.
+
+             syntax:
+
+          int variable=strlen(string name)
+
+program
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>  // this library file is needed because we are going to use
+                       string handling function.
+void main()
+{
+     char a[15];
+     int x;
+     clrscr();
+     printf("Enter a word");
+     gets(a); //This takes input from user and stores in a.
+     x=strlen(a);
+     printf("The total no of characters is %d",x)
+     getch();
+}
+
+
+char a[]="lockdown"
+int x;
+x=strlen(a);
+
+
+breakdown code:
+
+WAP to count no of characters without using string handling function.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+     char a[15];
+     int count=0,i=0;
+     clrscr();
+     printf("Enter a word");
+     gets(a); //This takes input from user and stores in a. //ram
+     for(i=0;a[i]!='\0';i++)
+      {
+            count++;
+      }
+  printf("Total no of letter or characters is %d", count);
+  getch();
+}
+      
+      
+
+2. strrev(): This function reverses the string.
+eg: ram= mar
+
+syntax:
+
+strrev(arrayname);
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h> 
+void main()
+{
+   char str[15];
+   clrscr();
+   printf("Enter a word");
+   gets(str);  //str=kist
+   strrev(str); //str=tsik
+   printf("\nThe reversed word is:");
+   puts(str);
+   getch();
+}
+
+code without using string handling function: do yourself.
+
+3. strcpy():
+   This function copies one string to another string.
+
+syntax:
+
+strcpy(destination array name,source array name);
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h> 
+void main()
+{
+    char str[]="kist";
+    char str1[7];
+    clrscr();
+    strcpy(str1,str);
+    printf("\nSource=%s",str);
+    printf("\nDestination=%s",str1);
+    getch();
+}
+
+code without using string handling function: do yourself.
+
+
+4. strcmp() function.
+
+In case of numbers or integers:
+
+int a=5;
+
+int b=10;
+
+if(a==b) // if(b==a)
+ {
+   printf("They are equal");
+ }
+
+In case of string, things doesn't work like above example.In case of string, if 
+we have to compare whether two strings are same or not, we have to use a function
+which is strcmp().
+
+Strcmp():
+   Strcmp compares two string and 'returns' 0 if they are identical.
+
+syntax:
+   
+   int variable=strcmp(string1 name, string 2 name)
+
+program:
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h> 
+void main()
+{
+   char str[]="abcd";  \\str[0]=a, str[1]=b,str[2]=c,str[3]=d,str[4]=\0
+   char str1[]="abcd";
+   int x;
+   clrscr();
+   x=strcmp(str1,str);
+   if(x==0)
+    {
+           printf("They are identical");
+    }
+   else
+    {
+            printf("They are not identical");
+    }
+ getch();
+}
+
+next program:
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h> 
+void main()
+{
+   char str[]="ace";
+   char str1[]="acd";
+   int x;
+   clrscr();
+   x=strcmp(str1,str); \\logic:()=(100-101=-1)
+   if(x==0)
+    {
+           printf("They are identical");
+    }
+   else
+    {
+            printf("They are not identical");
+    }
+ getch();
+}
+
+If return value is exactly 0, then two strings are identical.
+If return value is >0, first string comes after second string alphabetically.
+If return value is <0, first string comes before second string alphabetically.
+
+
+
+code without using string handling function: do yourself.
+
+
+5.toupper(): #include<ctype.h>
+
+The toupper() function converts a lowercase alphabet to an uppercase alphabet.
+
+
+program:
+#include <stdio.h>
+#include <ctype.h>
+int main() {
+    char c;
+
+    c = 'm';
+    printf("%c -> %c", c, toupper(c));
+
+    c = 'D';
+    printf("\n%c -> %c", c, toupper(c));
+
+    c = '9';
+    printf("\n%c -> %c", c, toupper(c));
+    return 0;
+}
+
+Output:
+m -> M
+D -> D
+9 -> 9
+     
+
+6.tolower(): #include<ctype.h>
+
+The tolower() function converts a uppercase alphabet to an lowercase alphabet.
+
+
+program:
+#include <stdio.h>
+#include <ctype.h>
+int main() {
+    char c;
+
+    c = 'm';
+    printf("%c -> %c", c, tolower(c));
+
+    c = 'D';
+    printf("\n%c -> %c", c, tolower(c));
+
+    c = '9';
+    printf("\n%c -> %c", c, tolower(c));
+    return 0;
+}
+
+Output:
+m -> m
+D -> d
+9 -> 9
+
+
+
+
+7. strupr():
+
+  It converts lowercase string to upper case.
+
+syntax:
+     strupr(string name);
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h> 
+void main()
+{
+    
+    char x[15];
+    clrscr();
+    printf("Enter a word");
+    gets(x); // x=kist is a college.
+    strupr(x);// x=KIST IS A COLLEGE.
+    printf("\n Uppercase string is:");
+    puts(x);
+    getch();
+}
+
+8. strlwr():
+     It converts uppercase string to lower case.
+
+syntax:
+     strlwr(string name);
+
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h> 
+void main()
+{
+    
+    char x[15];
+    clrscr();
+    printf("Enter a word");
+    gets(x); // x=KIST IS A COLLEGE.
+    strlwr(x);// x=kist is a college.
+    printf("\n Lower case string is:");
+    puts(x);
+    getch();
+}
+
+9. strcat():
+   This function is used to concatenate two strings (combine two strings).
+
+WAP to take your first name and last name in two strings and display them as one string. (In this case, or whenever you have to combine two different strings into single string, you will use strcat().  )
+
+In strcat, the final combined whole string is placed in destination.
+
+
+syntax: 
+
+     strcat(destination,source)
+
+program:
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h> 
+void main()
+{
+    char x[15];
+    char y[15];
+    clrscr();
+    printf("ENter x and y");
+    puts(x);
+    puts(y);
+    strcat(x,y);  // destination=x, source=y// x= deepak khadka
+    printf("The concatenated string is:");
+    puts(x);
+    getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4
+
+
+
+
+
+   
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

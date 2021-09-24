@@ -1,0 +1,371 @@
+Multidimensional Array:
+
+
+How to declare one dimensional array?
+
+Ans: int num[20];
+     int a[10]={1,2,3,4,5,6,7,8,9,10};
+
+
+Why do we need multidimensional array?
+Ans:
+	If a matrix has 2 rows and 3 columns,then it is 2 X 3 matrix.
+	2 is no of rows and 3 is no of columns
+
+	If a matrix has 5 rows and 2 columns,then it is 5 X 2 matrix.
+	5 is no of rows and 2 is no of columns.
+	i.e in matrix, front value is no of rows and second value is no of columns.
+
+
+	In order to solve matrix problems or problems of same nature we use
+	multidimensional array.
+	
+How to declare multidimensinal array?
+Ans:
+	If we had to declare one dimensional array, we would do:
+	int a[10], int num[20] and so on.
+	But since we are declaring multidimensional array, we need to represent both rows and columns. Hence multidimensional array is declared in following way.
+
+	int a[2][3]; int num[5][4];
+	
+	Hence, syntax for multidimensional array declaration is:
+
+	<datatype> arrayname[rows][columns];
+
+
+How to initialize multidimensional array? //static input
+
+Ans: Intitializing means creating array or variable with already value in it.
+
+	int a[4][3]= {{1,2,3},
+		      {4,5,6}, 
+                      {7,8,9},
+                      {10,11,12}};
+
+
+	int a[2][2]= { {1,2},
+		       {3,4}}; 	
+
+How to take input from user in multidimensional array or how to take dynamic input?
+
+Points to remember from pattern program:
+	How many loops if there is row and column? = 2
+	While printing in pattern what is printed first? = row
+
+
+Coding:   int a[10] : scanf("%d",&a[i][j]);
+
+#
+#
+void main()
+{
+	int a[5][4],i=0,j=0;
+	clrscr();
+	printf("\nEnter the values");
+	for(i=0;i<=4;i++) //this loop represents row and this loop block is to take input
+	{
+		for(j=0;j<=3;j++) //this loop represents column
+		{
+			printf("\n Enter [%d][%d] element",i,j);
+			scanf("%d",&a[i][j]);
+		}
+	}
+	for(i=0;i<=4;i++) //this loop represents row and this loop block is to print multidimensional array.
+	{
+		for(j=0;j<=3;j++) //this loop represents column
+		{
+			printf("%d",&a[i][j]);
+		}
+		printf("\n");
+	}
+
+getch();
+}
+
+
+Output:
+Enter the values:
+Enter [0][0] element: 1
+Enter [0][1] element: 2
+Enter [0][2] element: 3
+Enter [0][3] element: 4
+Enter [1][0] element: 5 and so on.
+
+
+Homework: WAP to take two 4x3 matrix and print sum.
+ (WAP to take two numbers and add them)
+
+
+Ans:
+
+
+Logic: a  (2x3)
+		2 3 4 
+		5 6 7 
+
+
+    b  (2 x3)
+	        1 2 3
+		2 4 5
+	
+    sum (2x3)
+		3 5 7
+		7 10 12
+
+
+While doing sum or diffrence of 2 matrix, the dimension of both matrix should be same, and the resulting matrix will be also of same dimension.
+
+#
+#
+void main()
+{
+	int a[4][3],b[4][3],sum[4][3],i=0,j=0;
+	clrscr();
+	printf("\nEnter the values");
+	for(i=0;i<=3;i++) //this loop represents row and this loop block is to take input
+	{
+		for(j=0;j<=2;j++) //this loop represents column
+		{
+			printf("\n Enter [%d][%d] element",i,j);
+			scanf("%d",&a[i][j]);
+		}
+	}
+	for(i=0;i<=3;i++) //this loop represents row and this loop block is to take input
+	{
+		for(j=0;j<=2;j++) //this loop represents column
+		{
+			printf("\n Enter [%d][%d] element",i,j);
+			scanf("%d",&b[i][j]);
+			sum[i][j]=a[i][j]+b[i][j];
+		}
+	}
+	for(i=0;i<=3;i++) //this loop represents row and this loop block is to print multidimensional array.
+	{
+		for(j=0;j<=2;j++) //this loop represents column
+		{
+			printf("%d",sum[i][j]);
+		}
+		printf("\n");
+	}
+
+getch();
+}
+
+
+
+2. WAP to take two multidimensional array and print the product:
+
+Ans:   
+
+
+Logic: a  (2x3)
+		2 3 4 
+		5 6 7 
+
+
+    b  (2 x3)
+	        1 2 3
+		2 4 5
+	
+    Product (2x3)
+		2 6 12
+		10 24 35
+ 
+In product, the logic is not same as sum or difference.
+
+Correct Logic for matrix multiplication:
+lets suppose, a and b where a matrix has dimension mxn and b matrix has dimension oxp
+
+a : mxn
+b : oxp
+
+Here axb is only possible when column of a is equal to row of b.
+and bxa is only possible when column of b is equal to row of a
+
+
+a : 5x3
+b: 4x5
+
+Is axb multiplication possible? ans: No, since column of a is 3 and row of b is 4.
+
+a:5x3
+b:3x7
+
+Is axb multiplication possible? ans: Yes, because column of a is 3 and row of b is 3 which is equal.
+
+
+
+axb ? ok , bxa? fail
+
+a[2][4],b[4][5]
+
+Resulting: Product[2][5];
+
+
+
+a[6][9], b[3][6]
+
+bxa
+resulting matrix: product[3][9].
+
+
+Code:
+
+#include <stdio.h>
+ 
+int main()
+{
+  int m=0, n=0, p=0, q=0, c=0, d=0, k=0, sum = 0;
+  int first[10][10], second[10][10], multiply[10][10];
+ 
+  printf("Enter number of rows and columns of first matrix\n");  //first matrix: m x n,second matrix: pxq
+  scanf("%d%d", &m, &n);  //we are taking dimension for first matrix  m=3,n=4
+
+  printf("Enter elements of first matrix\n");
+ 
+  for (c = 0; c < m; c++)   // This double for loop is where first matrix is taking input.
+  {
+    for (d = 0; d < n; d++)
+      {
+	  scanf("%d", &first[c][d]);
+      }
+  }
+	
+ flag:
+  printf("Enter number of rows and columns of second matrix\n");
+  scanf("%d%d", &p, &q);   // we are taking dimension for second matrix  p=4,q=5
+
+/* in this program we are trying to firstxsecond matrix, for which n should be equal to p.*/
+ 
+  if (n != p)
+   {
+    printf("The multiplication isn't possible.Please try again\n");
+    goto flag;
+   }
+	
+ else
+  {
+    printf("Enter elements of second matrix\n");
+ 
+    for (c = 0; c < p; c++)  //this part is taking input for second matrix.
+      for (d = 0; d < q; d++)
+        scanf("%d", &second[c][d]);
+ 
+    for (c = 0; c < m; c++)   // This triple loop block is part where actual multiplication is taking place and value is being passed ont multiply matrix.
+    {
+      for (d = 0; d < q; d++) 
+       {
+        for (k = 0; k < p; k++) 
+         {
+          sum = sum + first[c][k]*second[k][d];
+         }
+         multiply[c][d] = sum;
+         sum = 0;
+       }
+    }
+ 
+    printf("Product of the matrices:\n"); 
+ 
+    for (c = 0; c < m; c++)  //this part is to print multiply matrix.
+     {
+      for (d = 0; d < q; d++)
+       {
+        printf("%d\t", multiply[c][d]);
+       }
+      printf("\n");
+     }
+  }  //else scope ending
+  
+ 
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+				
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

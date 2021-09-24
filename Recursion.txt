@@ -1,0 +1,203 @@
+
+Recursion:
+A function that calls itself is known as a recursive function. And, this technique is known as recursion.
+
+In simple terms, if there is a function call inside its own function definition,then it is called recursive function.
+
+In programming languages, if a program allows you to call a function inside the same function, then it is called a recursive call of the function.
+
+The C programming language supports recursion, i.e., a function to call itself. But while using recursion, programmers need to be careful to define an exit condition from the function, otherwise it will go into an infinite loop.
+
+Recursive functions are very useful to solve many mathematical problems, such as calculating the factorial of a number, generating Fibonacci series, etc.
+
+
+Points to Remember in Recursive function:
+1. There should be a function call inside function definiton.
+2. The calling function should be same name of function definition.
+3. THere should be an exit condition to stop recursion. If there is no any exit condition, then the whole process gets into a infinite loop.
+
+
+Example: Sum of Natural Numbers Using Recursion
+
+
+Natural Number: which starts from 1.
+
+user: 500,400,123456
+
+#include <stdio.h>
+int sum(int n);
+
+int main() {
+    int number, result;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &number); //5
+
+    result = sum(number);
+
+    printf("sum = %d", result);
+    return 0;
+}
+
+int sum(int n) {
+    if (n != 0)
+        // sum() function calls itself
+        return n + sum(n-1); 
+    else
+        return n;
+}
+
+
+Fibonacci Series using recursion:
+
+#include<stdio.h>
+ 
+int Fibonacci(int);
+ 
+int main()
+{
+   int n, i = 0, c;
+ 
+   printf("How many terms do you want in your
+		fibonacci series?"); 	 
+  scanf("%d",&n);   //n=5
+ 
+   printf("Fibonacci series\n"); 
+ 
+   for ( c = 1 ; c <= n ; c++ )  //4
+   {
+      printf("%d\n", Fibonacci(i));
+      i++;  //3
+   }
+ 
+   return 0;
+}
+ 
+int Fibonacci(int n)
+{
+   if ( n == 0 )
+      return 0;
+   else if ( n == 1 )
+      return 1;
+   else
+      return ( Fibonacci(n-1) + Fibonacci(n-2)
+);
+} 
+
+Output: 0,1,1,2,
+
+
+
+# WAP to find the power of a given number using recursion.
+
+
+#include<stdio.h>
+#include<conio.h>
+
+int mansan(int,int); //Prototype or Declaration.
+
+void main()
+{
+
+	int result=0,num=0,p=0;
+	clrscr();
+	printf("Enter the number and the exponential power value respectively");
+	scanf("%d %d",&num,&p);
+	result=mansan(num,p); (5,5) //call  (num,p)=Multiply num by itself, p times.
+	printf("\n The result=%d",result); //8
+	getch();
+}
+
+
+int mansan(int x, int y)   //Defintion (2,3)
+{
+	
+	if(y!=0)
+	{
+		return(x * mansan(x,y-1));
+	}
+	else
+		return 1;
+}
+
+
+
+-----------------------------------------------------------------------------------------
+
+
+
+Assignment: WAP to find the power of a given number using user defined function.
+Assignment: WAP to find factorial of a given number using rescursion.
+
+
+
+Sum of natural number: If number is 5 then it means, 1+2+3+4+5.
+
+Factorial of a number: If number is 5, then it means 1*2*3*4*5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

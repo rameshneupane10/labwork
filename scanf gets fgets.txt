@@ -1,0 +1,178 @@
+
+Difference between scanf(),gets and fgets().
+
+1. scanf(): we use format specifier like %d for integer, %f for float, %c for characters and %s for string.
+
+In case of dealing with strings:
+	
+	char str[10];
+	printf("Enter the string");
+	scanf("%s",str);//ant is ant.
+	printf("The entered sentence is %s",str);//The entered sentence is ant.
+
+*there is no necessary to write & while taking input when %s is used.
+
+Main point of scanf is it reads the input until it encounters whitespace(normal space), new line or End of File.
+
+
+
+
+
+2. gets():
+
+We use gets as method of input as well.
+
+Nature of gets():
+
+gets() reads input until it encounters new line or End of File. It wont stop when it encounters whitespace,rather it takes whitespace as input as well.
+
+
+eg:
+
+In case of dealing with strings:
+	
+	char str[10];
+	printf("Enter the string");
+	gets(str); //ant is ant.
+	printf("The entered sentence is %s",str);//The entered sentence is ant is ant.
+
+But there is one huge issue with gets() i.e it doesnt care about size of array.
+In above example, although  the size of str is defined as 10, but it will take sentences more than 10 characters as input easily as well which is due to property of gets(). Gets() doesn't care about array size.
+
+
+Stdin:
+
+stdin stands for standard input. It is a keyword in C programming.
+
+Stdin is an input stream(buffer) where data is sent to and read by a program which means when user enters data after program is run, it is first sent to stdin and then only read by the program.
+
+
+
+eg:
+
+#include<stdio.h>
+
+struct emp
+{
+	char name[20];
+	int id;
+	int salary;
+}s[10];
+	
+void main()
+{
+	int i=0;
+	for(i=0;i<=9;i++)
+	{
+		printf("\nEnter name of %d person",i+1);
+		gets(s[i].name); //ram thapa
+		fflush(stdin);
+		
+		printf("\nEnter id of %d person",i+1);
+		scanf("%d",&s[i].id);
+		fflush(stdin);
+
+		printf("\nEnter salary of %d person",i+1);
+		scanf("%d",&s[i].salary); //5000
+		fflush(stdin);	
+	}
+}
+	
+
+Tips: whenever using gets for input, always use  fflush(Stdin) after user inputs data.
+
+3. fgets()
+
+syntax:
+
+fgets(arrayname, arraysize,file stream);
+
+eg:
+char str[10];
+
+gets(str); //It can accept more than 10 characters as well which is violation of memory.
+
+But,
+
+fgets(str,10,stdin); //It will accept only 10 characters only which solves violation of memorry issue created by gets().
+
+fflush() is required fgets() as well.
+
+eg:
+
+#include<stdio.h>
+
+struct emp
+{
+	char name[20];
+	int id;
+	int salary;
+}s[10];
+	
+void main()
+{
+	int i=0;
+	for(i=0;i<=9;i++)
+	{
+		printf("\nEnter name of %d person",i+1);
+		fgets(s[i].name,20,stdin); //ram thapa
+		fflush(stdin);
+		
+		printf("\nEnter id of %d person",i+1);
+		scanf("%d",&s[i].id);
+		fflush(stdin);
+
+		printf("\nEnter salary of %d person",i+1);
+		scanf("%d",&s[i].salary); //5000
+		fflush(stdin);	
+	}
+}
+	
+fflush(stdin) clears the stdin buffer everytime after it is accessed by scanf() or gets() or fgets();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

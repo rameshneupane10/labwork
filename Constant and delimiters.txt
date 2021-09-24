@@ -1,0 +1,111 @@
+Constant/Literals:
+----------------------------------
+
+Constant is the placeholder where the value remains constant or doesnt vary.
+
+//Constant is a variable where value doesn't change.
+
+
+	How to declare a constant?
+Ans:
+	THere are 2 ways:
+
+	a. using "define" keyword.
+	b. using "const"  keyword.
+
+
+
+a. Using define:
+
+	-> Define must be used always before void main().
+
+	syntax:
+		
+	#define <constant name> <const value>
+
+
+	for eg:
+
+	#include<stdio.h>
+	#define PI 3.14 
+	
+	void main()
+	{
+		
+		printf("The value of PI is %3.f",PI)
+		getch();
+	}
+
+
+b. Using const keyword:
+
+
+-> Const keyword is always used inside void main where we declare our variables.
+
+
+syntax:
+
+
+ const <data type> <constant name>=<value>
+
+
+eg:
+
+	#include<Stdio.h>
+	#include<conio.h>
+
+	void main()
+	{
+		const int x=5;  //here x is a constant with value 5 in it which wont be changed.
+		clrscr();
+		x=x+1;
+		printf("\n The new value of x is %d",x);
+		getch();
+	}
+
+	: In above program there will be error on execution, since x is constant and in 3rd line we are
+	   trying to change that value by adding 1. It won't work.
+
+
+Constants values are never meant to be modified but access only.
+
+
+
+
+Delimiters:
+------------------------------
+
+
+A delimiter is one or more characters that separate text strings. Common delimiters are commas (,), semicolon (;), quotes ( ", ' ), braces ({}), pipes (|), or slashes ( / \ ). 
+
+printf("My name is \n deepak");
+
+
+My name is
+deepak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+How to declare an array of a certain size?
+
+Ans:
+
+	int num[10]; 
+		Total memory size consumed:20 bytes.
+		array name: num
+		array data type: int
+		array size:10
+		array index:0-9
+	float arr[20];
+		Total memory size consumed: 80 bytes;
+		name:arr
+		data type: float
+		size: 20
+		index:0-19
+
+10,123,35,3,46,57,57,3,42,3,2
+
+	int num[11];
+		Total memory size consumed:22 byte;
+		name: num
+		data type: int
+		size: 11
+		index:0-10
+
+single letter: char a; // single characters  // char as variable
+		char a[14]; // 14 characters // sentence or word// 
+
+
+I teach at kist college.
+
+char sentence[24]; = Total memory size consumed: 24 bytes.
+	
+
+
+How to take static input using array?  //Intializing an array.
+
+
+Ans: In case of variable while taking static input we do the following:
+	int a=10;
+	float b=20.6;
+	char c='p';
+
+	In case of array :
+
+	int a[5]={23,53,65,64,75};
+	int a[]={23,53,65,64,75};
+
+
+How to take dynamic input using array? or How to take input from user?
+How to display output using array?
+
+Ans:
+	Write a program to take 10 students marks in C programming and display them.
+
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int marks[10],i=0;
+	clrscr();
+	// Taking input in array 
+	for(i=0;i<=9;i++)
+	{
+		printf("Enter %d value number",i+1)	
+		scanf("%d",&marks[i]);
+	}
+
+	//Display 7th value
+	printf("The 7th value is %d",marks[6]);
+
+
+	// Display output whole array
+	for(i=0;i<=9;i++)
+	{
+		printf("\nThe %d position element is %d",i+1,marks[i]);
+	}
+
+getch();
+}
+
+
+Output:
+
+The 1 position element is 5;
+
+
+
+
+Output:
+	Enter 1 value number 44
+	Enter 2 value number 
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
